@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amps Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="sidebar">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw3YAtKhDsT9M192HvbcnH-qDTrRawqtwsu9NFUDZRMkUDFMFVDMrarwRLNEalWQ2HzeI&usqp=CAU" alt="logo-small" class="logo-md" width="150">
+
+  <ul>
+    <li class="active">
+      <a href="dashboard1.html">
+        <i class="fas fa-lightbulb"></i> <span>Dashboard</span>
+      </a>
+    </li> 
+
+    <li class="relative">
+      <a href="#" id="userManagementToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-user"></i> User Management</span>
+        <i class="fas fa-caret-down ml-2"></i>
+      </a>
+      <ul id="userDropdown" class="hidden ml-6">
+        <li class="active">
+          <a href="user.html">
+            <i class="fas fa-user"></i> <span>User</span>
+          </a>
+        </li>
+        <li class="new">
+          <a href="Role.html">
+            <i class="fas fa-user-circle"></i> <span>Role</span>
+          </a>
+        </li> 
+      </ul>
+    </li>
+
+    <li class="services">
+      <a href="#" id="ServiceToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-tools"></i> Services</span>
+        <i class="fas fa-caret-down ml-1"></i>
+      </a>
+      <ul id="serviceDropdown" class="hidden ml-6">
+        <li class="actives">
+          <a href="ourservices.html">
+            <i class="fas fa-user"></i> <span>Our services</span>
+          </a>
+        </li>
+        <li class="activew">
+          <a href="New service.html">
+            <i class="fas fa-user"></i> <span>New services</span>
+          </a>
+        </li>
+        <li class="new1">
+          <a href="Old services.html">
+            <i class="fas fa-user-circle"></i> <span>Old services</span>
+          </a>
+        </li> 
+      </ul>
+    </li>
+
+    <li class="client">
+      <a href="#" id="clientToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-user"></i> Client</span>
+        <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
+      </a>
+      <ul id="clientDropdown" class="hidden ml-6">
+        <li class="active">
+          <a href="Clientpage.html">
+            <i class="fas fa-user"></i> <span>Client page</span>
+          </a>
+        </li>
+      </ul>
+  </li>
+</div>
+
+
+   
+   <div class="main">
+    <div class="company-info">
+    <div class="left">
+      📞 +91-9876543210
+    </div>
+    <div class="right">
+      ✉️ support@companyname.com
+    </div>
+  </div>
+    
+    <header>
+      <i class="fa-solid fa-bars" id="dropdown"></i>
+    <h1 style="font-size: 18px;">Good Morning, James!</h1>
+      <input type="text" placeholder="Search here...">
+      <div class="profile-pic"></div>
+    </header>
+    <div class="cards">
+      <div class="card">
+        <p>Sessions</p>
+        <h2>24k</h2>
+        <span class="green">8.5% New Sessions Today</span>
+      </div>
+      <div class="card">
+        <p>Avg. Sessions</p>
+        <h2>00:18</h2>
+        <span class="green">1.5% Weekly Avg.Sessions</span>
+      </div>
+      <div class="card">
+        <p>Bounce Rate</p>
+        <h2>36.45%</h2>
+        <span class="red">8% Up Bounce Rate Weekly</span>
+      </div>
+    </div>
+
+    <div class="charts">
+  <div class="audience">
+    <h3>Audience Overview</h3>
+    <canvas id="audienceChart"></canvas>
+  </div>
+  <div class="visitors">
+    <h3>New Visitors <span id="visitorTotal">1,282</span></h3>
+    <canvas id="visitorsChart"></canvas>
+    <button class="details-btn">More Detail →</button>
+  </div>
+</div>
+    <!-- Browser Used & Traffic Reports Section -->
+    <div class="report-widget">
+      <h3>Browser Used & Traffic Reports</h3>
+      <div class="report-scroll">
+        <div class="browser-report">
+          <img src="https://cdn-icons-png.flaticon.com/512/888/888847.png" alt="Chrome">
+          <div>
+            <strong>Chrome 10853</strong><br>
+            <span class="small-text">(52%)</span><br>
+            <span>52.80% 566</span><br>
+            <span class="small-text">(92%)</span>
+          </div>
+        </div>
+        <div class="browser-report">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732229.png" alt="Edge">
+          <div>
+            <strong>Microsoft Edge 2545</strong><br>
+            <span class="small-text">(47%)</span><br>
+            <span>47.54% 498</span><br>
+            <span class="small-text">(81%)</span>
+          </div>
+        </div>
+
+        <div class="browser-report">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Opera">
+          <div>
+            <strong>Opera 1021</strong><br>
+            <span class="small-text">(15%)</span><br>
+            <span>15.10% 180</span><br>
+            <span class="small-text">(74%)</span>
+          </div>
+        </div>
+
+        <div class="browser-report">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="Internet Explorer">
+          <div>
+            <strong>IE 953</strong><br>
+            <span class="small-text">(12%)</span><br>
+            <span>12.65% 120</span><br>
+            <span class="small-text">(59%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total Visits Section -->
+    <div class="total-visits-widget">
+      <h3>Total Visits</h3>
+      <table class="visits-table">
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th>Sessions</th>
+            <th>Prev.Period</th>
+            <th>% Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="green-text">Organic search</td>
+            <td>10853 <span class="small-text">(52%)</span></td>
+            <td>566 <span class="small-text">(92%)</span></td>
+            <td class="green-text">52.80% <span class="arrow up">▲</span></td>
+          </tr>
+          <tr>
+            <td class="green-text">Direct</td>
+            <td>2545 <span class="small-text">(47%)</span></td>
+            <td>498 <span class="small-text">(81%)</span></td>
+            <td class="red-text">-17.20% <span class="arrow down">▼</span></td>
+          </tr>
+          <tr>
+            <td class="green-text">Referral</td>
+            <td>1836 <span class="small-text">(38%)</span></td>
+            <td>455 <span class="small-text">(74%)</span></td>
+            <td class="green-text">41.12% <span class="arrow up">▲</span></td>
+          </tr>
+          <tr>
+            <td class="green-text">Email</td>
+            <td>1958 <span class="small-text">(31%)</span></td>
+            <td>361 <span class="small-text">(61%)</span></td>
+            <td class="red-text">-8.24% <span class="arrow down">▼</span></td>
+          </tr>
+          <tr>
+            <td class="green-text">Social</td>
+            <td>1566 <span class="small-text">(26%)</span></td>
+            <td>299 <span class="small-text">(49%)</span></td>
+            <td class="green-text">29.33% <span class="arrow up">▲</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="update-text">
+        <em>Last data updated – 13min ago <span class="refresh">↻</span></em>
+      </p>
+    </div>
+
+    <!-- Traffic Section -->
+<div class="main-container">
+
+  <!-- Left Section: Traffic Sources -->
+  <div class="traffic-left">
+    <div class="traffic-header">
+      <span>Traffic Sources</span>
+      <div class="dropdown">
+        <i class="fa fa-user"></i> Direct <i class="fa fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <div class="gauge-container">
+      <svg viewBox="0 0 36 36" class="circular-chart">
+        <path class="circle-bg"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 
+                 a 15.9155 15.9155 0 0 1 0 -31.831" />
+        <path class="circle"
+              stroke-dasharray="76, 100"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 
+                 a 15.9155 15.9155 0 0 1 0 -31.831" />
+        <text x="18" y="20.35" class="percentage">76%</text>
+      </svg>
+    </div>
+
+    <h3 class="direct-title">Direct Visitors</h3>
+    <p class="description">This is a simple hero unit, a simple jumbotron-style component.</p>
+    <button class="btn">More details</button>
+  </div>
+
+  <!-- Right Section: Organic Traffic in World -->
+  <div class="traffic-right">
+    <div class="map-header">
+      <h3>Organic Traffic In World</h3>
+      <div class="dropdown">
+        <button id="dropdownToggle">
+          <i class="fa fa-calendar"></i> Today <i class="fa fa-chevron-down"></i>
+        </button>
+        <ul id="dropdownMenu" class="dropdown-menu hidden">
+          <li>Last Week</li>
+          <li>Last Month</li>
+          <li>This Year</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <img src="data:image/jpeg;base64,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" alt="World Map" class="map-img" />
+      <ul class="map-points">
+        <li style="top: 30%; left: 22%;">Canada</li>
+        <li style="top: 35%; left: 28%;">United States</li>
+        <li style="top: 70%; left: 30%;">Brazil</li>
+        <li style="top: 20%; left: 42%;">Greenland</li>
+        <li style="top: 25%; left: 50%;">Norway</li>
+        <li style="top: 30%; left: 55%;">Ukraine</li>
+        <li style="top: 45%; left: 53%;">Egypt</li>
+        <li style="top: 25%; left: 68%;">Russia</li>
+        <li style="top: 50%; left: 75%;">China</li>
+      </ul>
+    </div>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

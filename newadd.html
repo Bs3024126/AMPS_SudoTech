@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Overlay Popup Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <button id="openFormBtn">Open Form</button>
+
+  <!-- Overlay form container -->
+  <div class="overlay" id="overlay">
+    <div class="form-popup">
+      <h2>Contact Form</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <button type="submit" class="btn submit-btn">Submit</button>
+        <button type="button" class="btn close-btn" id="closeFormBtn">Close</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

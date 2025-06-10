@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amps Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="sidebar">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw3YAtKhDsT9M192HvbcnH-qDTrRawqtwsu9NFUDZRMkUDFMFVDMrarwRLNEalWQ2HzeI&usqp=CAU" alt="logo-small" class="logo-md" width="150">
+
+ 
+    <ul>
+      <li class="active">
+        <a href="dashboard1.html">
+          <i class="fas fa-lightbulb"></i> <span>Dashboard</span>
+        </a>
+      </li> 
+      
+      
+   <li class="relative">
+       
+      <a href="#" id="userManagementToggle" class="flex items-center justify-between">
+          <span><i class="fas fa-user"></i> User Management</span>
+          <i class="fas fa-caret-down ml-2"></i>
+        </a>
+        <ul id="userDropdown" class="hidden ml-6">
+   <li class="active">
+        <a href="user.html">
+          <i class="fas fa-user"></i> <span>user</span>
+        </a>
+        </li>
+       <li class="new">
+          <a href="Role.html">
+          <i class="fas fa-user-circle"></i> <span>Role</span>
+        </a>
+      </li> 
+      </ul>
+    </li>
+    <li class="services">
+       
+      <a href="#" id="ServiceToggle" class="flex items-center justify-between">
+          <span><i class="fas fa-tools "></i>  Services</span>
+          <i class="fas fa-caret-down ml-1"></i>
+        </a>
+        <ul id="serviceDropdown" class="hidden ml-6">
+               <li class="actives">
+        <a href="ourservices.html">
+          <i class="fas fa-user"></i> <span> Our services </span>
+        </a>
+        </li>
+   <li class="activew">
+        <a href="New service.html">
+          <i class="fas fa-user"></i> <span>new services</span>
+        </a>
+        </li>
+       <li class="new1">
+          <a href="Old services.html">
+          <i class="fas fa-user-circle"></i> <span>Old services</span>
+        </a>
+      </li> 
+        </ul>
+        </li>
+        
+ <li class="client">
+      <a href="#" id="clientToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-user"></i> Client</span>
+        <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
+      </a>
+      <ul id="clientDropdown" class="hidden ml-6">
+        <li class="active">
+          <a href="Clientpage.html">
+            <i class="fas fa-user"></i> <span>Client page</span>
+          </a>
+        </li>
+      </ul>
+  
+
+  
+    </ul>
+  </li>
+ 
+  </nav>
+  
+</div> 
+
+   
+   <div class="main">
+    <div class="company-info">
+    <div class="left">
+      📞 +91-9876543210
+    </div>
+    <div class="right">
+      ✉️ support@companyname.com
+    </div>
+  </div>
+    
+    <header>
+      <i class="fa-solid fa-bars" id="dropdown"></i>
+    <h1 style="font-size: 18px;">Good Morning, James!</h1>
+      <input type="text" placeholder="Search here...">
+      <div class="profile-pic"></div>
+    </header>
+ <table class="visits-table1">
+        <thead>
+          <tr>
+            <th>No</th>
+           
+            <th>Name</th>
+            <th>email</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+         <tr class="Avtar">
+  <td class="green-text">3</td>
+ 
+  <td>
+    ankita <span class="small-text"></span>
+  </td>
+  <td>an@gmail.com</td>
+  <td>user</td>
+  <td>
+  <div class="action-buttons">
+    <button class="icon-btn"  style="background-color: rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <button class="icon-btn" style="background-color:black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+    <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+   
+    </button>
+   
+  </div>
+</td>
+
+</tr>        
+      <tr class="Avtar">
+  <td class="green-text">3</td>
+ 
+  <td>
+    ankita <span class="small-text"></span>
+  </td>
+  <td>an@gmail.com</td>
+  <td>user</td>
+<td>
+  <div class="action-buttons">
+   <button class="icon-btn"  style="background-color: rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+      <button class="icon-btn"  style="background-color: black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+    <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+   
+  </div>
+</td>
+
+
+</tr>
+
+         <tr class="Avtar">
+  <td class="green-text">3</td>
+ 
+  <td>
+    ankita <span class="small-text"></span>
+  </td>
+  <td>an@gmail.com</td>
+  <td>user</td>
+  <td>
+  <div class="action-buttons">
+   <button class="icon-btn"  style="background-color: rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+       <button class="icon-btn"  style="background-color: black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+ <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+          
+    
+  </div>
+</td>
+
+
+          <tr class="Avtar">
+  <td class="green-text">4</td>
+  
+  <td>
+    ruhanika <span class="small-text"></span>
+  </td>
+  <td>ruhanika@gmail.com</td>
+  <td>user</td>
+<td>
+  <div class="action-buttons">
+     <button class="icon-btn" style="background-color:rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <button class="icon-btn" style="background-color:black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+   <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+    
+  </div>
+</td>
+
+
+
+          <tr class="Avtar">
+  <td class="green-text">4</td>
+  
+  <td>ruhanika <span class="small-text"></span>
+  </td>
+  <td>ruhanika@gmail.com</td>
+  <td>user</td>
+  <td>
+  <div class="action-buttons">
+   <button class="icon-btn" style="background-color:rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+   <button class="icon-btn" style="background-color:black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+    <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+   
+    </button>
+  </div>
+</td>
+
+
+
+
+                   <tr class="Avtar">
+  <td class="green-text">4</td>
+ 
+  <td>
+    ruhanika <span class="small-text"></span>
+  </td>
+  <td>ruhanika@gmail.com</td>
+  <td>user</td>
+ <td>
+  <div class="action-buttons">
+  <button class="icon-btn" style="background-color:rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+   <button class="icon-btn" style="background-color:black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+     <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+
+
+  </div>
+</td>
+
+         <tr class="Avtar">
+  <td class="green-text">7</td>
+ 
+  <td>
+    ruhi <span class="small-text"></span>
+  </td>
+  <td>ruhi@gmail.com</td>
+  <td>user</td>
+  <td>
+  <div class="action-buttons">
+     <button class="icon-btn" style="background-color:rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+      <button class="icon-btn" style="background-color:black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+    <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+   
+    </button>
+  </div>
+</td>
+
+
+<tr class="Avtar">
+  <td class="green-text">8</td>
+ 
+  <td>
+    ashvin <span class="small-text"></span>
+  </td>
+  <td>ash@gmail.com</td>
+  <td>user</td>
+  <td>
+  <div class="action-buttons">
+      <button class="icon-btn" style="background-color:rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+     <button class="icon-btn" style="background-color:black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+    <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+   
+  </div>
+</td>
+
+
+           <tr class="Avtar">
+  <td class="green-text">9</td>
+ 
+  <td>
+    ashvin <span class="small-text"></span>
+  </td>
+  <td>ash@gmail.com</td>
+  <td>user</td>
+ <td>
+  <div class="action-buttons">
+    <button class="icon-btn" style="background-color:rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <button class="icon-btn" style="background-color:black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+    <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+  
+</td>
+
+<tr class="Avtar">
+  <td class="green-text">10</td>
+ 
+  <td>
+    ashvin <span class="small-text"></span>
+  </td>
+  <td>ash@gmail.com</td>
+  <td>user</td>
+  <td>
+  <div class="action-buttons">
+   <button class="icon-btn" style="background-color:rgb(9, 192, 91);">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+     <button class="icon-btn" style="background-color:black;">
+      <i class="fa-solid fa-file-export"></i>
+    </button>
+  <button class="icon-btn" style="background-color:lightblue;">
+      <i class="fa-solid fa-file-import"></i>
+    </button>
+   
+</td>
+
+          
+        </tbody>
+      </table>
+
+<div class="page">
+    <div class="pagination">
+       
+    
+      <button disabled>&lt;</button>
+      <button class="active">1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+      <span>...</span>
+      <button>></button>
+     
+    </div>
+     <div class="entries-select">
+        <label>Entries Per Page</label>
+        <select>
+          <option>10</option>
+          <option>25</option>
+          <option>50</option>
+        </select>
+    </div>
+</div>
+  </div>
+  </div>
+</div>
+    <script src="script.js"></script>
+ 
+</body>
+</html>

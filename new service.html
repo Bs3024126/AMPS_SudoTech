@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amps Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="sidebar">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw3YAtKhDsT9M192HvbcnH-qDTrRawqtwsu9NFUDZRMkUDFMFVDMrarwRLNEalWQ2HzeI&usqp=CAU" alt="logo-small" class="logo-md" width="150">
+
+ 
+    <ul>
+      <li class="active">
+        <a href="dashboard1.html">
+          <i class="fas fa-lightbulb"></i> <span>Dashboard</span>
+        </a>
+      </li> 
+      
+      
+   <li class="relative">
+       
+      <a href="#" id="userManagementToggle" class="flex items-center justify-between">
+          <span><i class="fas fa-user"></i> User Management</span>
+          <i class="fas fa-caret-down ml-2"></i>
+        </a>
+        <ul id="userDropdown" class="hidden ml-6">
+   <li class="active">
+        <a href="user.html">
+          <i class="fas fa-user"></i> <span>user</span>
+        </a>
+        </li>
+       <li class="new">
+          <a href="Role.html">
+          <i class="fas fa-user-circle"></i> <span>Role</span>
+        </a>
+      </li> 
+      </ul>
+    </li>
+    <li class="services">
+       
+      <a href="#" id="ServiceToggle" class="flex items-center justify-between">
+          <span><i class="fas fa-tools "style="margin-right: 1px;"></i>  Services</span>
+          <i class="fas fa-caret-down ml-1"></i>
+        </a>
+        <ul id="serviceDropdown" class="hidden ml-6">
+               <li class="actives">
+        <a href="ourservices.html">
+          <i class="fas fa-user"></i> <span> Our services </span>
+        </a>
+        </li>
+   <li class="activew">
+        <a href="New service.html">
+          <i class="fas fa-user"></i> <span>new services</span>
+        </a>
+        </li>
+       <li class="new1">
+          <a href="Old services.html">
+          <i class="fas fa-user-circle"></i> <span>Old services</span>
+        </a>
+      </li> 
+        </ul>
+        </li>
+ <li class="client">
+      <a href="#" id="clientToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-user"></i> Client</span>
+        <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
+      </a>
+      <ul id="clientDropdown" class="hidden ml-6">
+        <li class="clientactive">
+          <a href="Clientpage.html">
+            <i class="fas fa-user"></i> <span>Client page</span>
+          </a>
+        </li>
+      </ul>
+  </li>
+ 
+  </nav>
+  
+</div> 
+
+   
+   <div class="main">
+    <div class="company-info">
+    <div class="left">
+      📞 +91-9876543210
+    </div>
+    <div class="right">
+      ✉️ support@companyname.com
+    </div>
+  </div>
+    
+    <header>
+      <i class="fa-solid fa-bars" id="dropdown"></i>
+    <h1 style="font-size: 18px;">Good Morning, James!</h1>
+      <input type="text" placeholder="Search here...">
+      <div class="profile-pic"></div>
+    </header>
+
+  <div class="table-container1">
+     <h1>New Services</h1>
+      <input type="text" id="searchBox" placeholder="Search services..." />
+       <a href="#" class="btn-add-service" id="openFormBtn">➕ Add New Service</a>
+    </div>
+   
+<div class="overlay" id="overlay">
+    <div class="form-popup">
+      <h2>Contact Form</h2>
+     <form id="serviceForm">
+    <input type="text" id="serviceCode" placeholder="Service Code" required />
+    <input type="text" id="serviceName" placeholder="Service Name" required />
+    <input type="text" id="servicePrice" placeholder="Price (e.g., ₹500)" required />
+    <input type="text" id="serviceDuration" placeholder="Duration (e.g., 1 Hour)" required />
+    <select id="serviceAvailability" required>
+      <option value="">-- Availability --</option>
+      <option value="Available">Available</option>
+      <option value="Unavailable">Unavailable</option>
+    </select>
+    <button type="submit" class="btn submit-btn">Add Service</button>
+    <button type="button" class="btn close-btn" id="closeFormBtn">Close</button>
+  </form>
+    </div>
+  </div>
+    
+
+  <div class="table-wrapper">
+    <table border="1" cellpadding="10" cellspacing="0" id="servicesTable">
+      <thead>
+        <tr>
+          <th>Service Code</th>
+          <th>Service Name</th>
+          <th>Price</th>
+          <th>Duration</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+      <tbody id="serviceTableBody">
+        <tr>
+          <td>001</td>
+          <td>AC Installation</td>
+          <td>₹1500</td>
+          <td>2 Hours</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Fan Repair</td>
+          <td>₹500</td>
+          <td>1 Hour</td>
+          <td>Unavailable</td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>Switchboard Repair</td>
+          <td>₹700</td>
+          <td>1.5 Hours</td>
+          <td>Available</td>
+        </tr>
+        <td>004</td>
+  <td>Ceiling Fan Installation</td>
+  <td>₹600</td>
+  <td>1 Hour</td>
+  <td>Available</td>
+</tr>
+<tr>
+  <td>005</td>
+  <td>Light Fitting Installation</td>
+  <td>₹400</td>
+  <td>45 Minutes</td>
+  <td>Available</td>
+</tr>
+<tr>
+  <td>006</td>
+  <td>Inverter Setup</td>
+  <td>₹1800</td>
+  <td>3 Hours</td>
+  <td>Unavailable</td>
+</tr>
+<tr>
+  <td>007</td>
+  <td>Electrical Wiring (per room)</td>
+  <td>₹1200</td>
+  <td>4 Hours</td>
+  <td>Available</td>
+</tr>
+<tr>
+  <td>008</td>
+  <td>MCB Replacement</td>
+  <td>₹350</td>
+  <td>30 Minutes</td>
+  <td>Available</td>
+</tr>
+<tr>
+  <td>009</td>
+  <td>Power Socket Installation</td>
+  <td>₹250</td>
+  <td>30 Minutes</td>
+  <td>Available</td>
+</tr>
+<tr>
+  <td>010</td>
+  <td>Tube Light Repair</td>
+  <td>₹300</td>
+  <td>30 Minutes</td>
+  <td>Unavailable</td>
+</tr>
+<tr>
+  <td>011</td>
+  <td>Door Bell Installation</td>
+  <td>₹200</td>
+  <td>20 Minutes</td>
+  <td>Available</td>
+</tr>
+<tr>
+ 
+        <!-- More rows -->
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
