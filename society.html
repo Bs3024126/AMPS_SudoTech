@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amps Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="sidebar">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw3YAtKhDsT9M192HvbcnH-qDTrRawqtwsu9NFUDZRMkUDFMFVDMrarwRLNEalWQ2HzeI&usqp=CAU" alt="logo-small" class="logo-md" width="150">
+
+  <ul>
+    <li class="active">
+      <a href="dashboard1.html">
+        <i class="fas fa-lightbulb"></i> <span>Dashboard</span>
+      </a>
+    </li> 
+
+    <li class="relative">
+      <a href="#" id="userManagementToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-user"></i> User Management</span>
+        <i class="fas fa-caret-down ml-2"></i>
+      </a>
+      <ul id="userDropdown" class="hidden ml-6">
+        <li class="active">
+          <a href="user.html">
+            <i class="fas fa-user"></i> <span>User</span>
+          </a>
+        </li>
+        <li class="new">
+          <a href="Role.html">
+            <i class="fas fa-user-circle"></i> <span>Role</span>
+          </a>
+        </li> 
+      </ul>
+    </li>
+
+    <li class="services">
+      <a href="#" id="ServiceToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-tools"></i> Services</span>
+        <i class="fas fa-caret-down ml-1"></i>
+      </a>
+      <ul id="serviceDropdown" class="hidden ml-6">
+        <li class="actives">
+          <a href="ourservices.html">
+            <i class="fas fa-user"></i> <span>Our services</span>
+          </a>
+        </li>
+        <li class="activew">
+          <a href="New service.html">
+            <i class="fas fa-user"></i> <span>New services</span>
+          </a>
+        </li>
+        <li class="new1">
+          <a href="Old services.html">
+            <i class="fas fa-user-circle"></i> <span>Old services</span>
+          </a>
+        </li> 
+      </ul>
+    </li>
+
+    <li class="client">
+      <a href="#" id="clientToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-user"></i> Client</span>
+        <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
+      </a>
+      <ul id="clientDropdown" class="hidden ml-6">
+        <li class="active">
+          <a href="Clientpage.html">
+            <i class="fas fa-user"></i> <span>Client page</span>
+          </a>
+          </li>
+       <li class="activenew1">
+          <a href="Society.html">
+            <i class="fas fa-user"></i> <span>Societies</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
+
+   <div class="main">
+    <div class="company-info">
+    <div class="left">
+      📞 +91-9876543210
+    </div>
+    <div class="right">
+      ✉️ support@companyname.com
+    </div>
+  </div>
+    
+    <header>
+         <i class="fa-solid fa-bars" id="dropdown"></i>
+    <h1 style="font-size: 18px;">Good Morning, James!</h1>
+    
+      <input type="text" placeholder="Search here...">
+      <div class="profile-pic"></div>
+    </header>
+   <table class="society-table1"></table>
+<table>
+  
+   
+    <thead>
+      
+        <tr>
+         <th style="position: relative;">
+  <input type="checkbox" id="selectAll" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">S.No</span>
+</th>
+            <th>Society Name</th>
+            <th>Location</th>
+            <th>Number of Flats</th>
+            <th>President Name</th>
+            <th>Contact Number</th>
+            <th>AMC </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+              <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+
+
+            <td>Green Valley Residency</td>
+            <td>Mumbai</td>
+            <td>120</td>
+            <td>Rajesh Sharma</td>
+            <td>9876543210</td>
+             <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </tr>
+      </td>
+        <tr>
+            <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+            <td>Sunny Heights</td>
+            <td>Pune</td>
+            <td>80</td>
+            <td>Priya Mehta</td>
+            <td>9123456789</td>
+             <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+               <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+            <td>Lake View Apartments</td>
+            <td>Bangalore</td>
+            <td>150</td>
+            <td>Manoj Patel</td>
+            <td>9988776655</td>
+              <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+           <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+            <td>Silver Oaks Residency</td>
+            <td>Hyderabad</td>
+            <td>100</td>
+            <td>Anita Desai</td>
+            <td>9112233445</td>
+             <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select></td>
+        </tr>
+        <tr>
+               <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+
+            <td>Hilltop Towers</td>
+            <td>Chennai</td>
+            <td>200</td>
+            <td>Karthik Reddy</td>
+            <td>9090909090</td>
+            <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+               <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+            <td>Maple Residency</td>
+            <td>Delhi</td>
+            <td>90</td>
+            <td>Sunita Kapoor</td>
+            <td>9345678901</td>
+             <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+            <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+
+            <td>Royal Greens</td>
+            <td>Jaipur</td>
+            <td>130</td>
+            <td>Vikas Singh</td>
+            <td>9234567890</td>
+           
+              <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+              <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+            <td>Ocean Breeze Apartments</td>
+            <td>Kolkata</td>
+            <td>75</td>
+            <td>Rina Mukherjee</td>
+            <td>9321567890</td>
+            <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+              <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+            <td>Sunshine Residency</td>
+            <td>Ahmedabad</td>
+            <td>110</td>
+            <td>Arjun Desai</td>
+            <td>9876123450</td>
+              <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </td>
+        </tr>
+        <tr>   <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+            <td>Pearl Heights</td>
+            <td>Lucknow</td>
+            <td>95</td>
+            <td>Sneha Verma</td>
+            <td>9988123456</td>
+          <td> <select class="Active-dropdown">
+          <option value="Active" selected>Active</option>
+          <option value="Non-Active">Non-Active</option>
+        </select>
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+  <script src="script.js"></script>
+</body>
+</html>

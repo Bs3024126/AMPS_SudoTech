@@ -73,8 +73,9 @@
     </ul>
   </li>
 
-       
-      <li class="client">
+     <nav>
+  <ul>
+    <li class="client">
       <a href="#" id="clientToggle" class="flex items-center justify-between">
         <span><i class="fas fa-user"></i> Client</span>
         <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
@@ -82,13 +83,19 @@
       <ul id="clientDropdown" class="hidden ml-6">
         <li class="active">
           <a href="Clientpage.html">
-            <i class="fas fa-user"></i> <span>Client page</span>
+            <i class="fas fa-user"></i> <span>Clients</span>
+          </a>
+        </li>
+        <li class="activenew1">
+          <a href="Society.html">
+            <i class="fas fa-user"></i> <span>Societies</span>
           </a>
         </li>
       </ul>
-  
-       
-  </nav>
+    </li>
+  </ul>
+</nav>
+
 
 </div> 
 
@@ -106,85 +113,386 @@
     <header>
       <i class="fa-solid fa-bars" id="dropdown"></i>
     <h1 style="font-size: 18px;">Good Morning, James!</h1>
+     <h2>Client List</h2>
       <input type="text" placeholder="Search here...">
       <div class="profile-pic"></div>
     </header>
-  <div class="table-container-client">
-    <h2>Client List</h2>
+     
     <table class="client-table">
       <thead>
         <tr>
+          <th style="position: relative;">
+  <input type="checkbox" id="selectAll" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">S.No</span>
+</th>
+
+          <th> Serevice Code</th>
+          <th>service engineer  </th>
           <th>Client Code</th>
           <th>Name</th>
           <th>Email ID</th>
           <th>Phone Number</th>
+          <th> Status</th>
+          
         </tr>
       </thead>
       <tbody>
+        
         <tr>
+      <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">01</span>
+</td>
+
+
+
           <td>C001</td>
-          <td>Aarav Mehta</td>
+<td>Noam</td>
+          <td>C001</td>
+     <td>
+  <a href="#"
+     onclick="openModal('Vikaram Rao', 'C140', 'neeraj@example.com', '9876543220')"
+     data-address="456, Park Street"
+     data-company="XYZ Pvt Ltd"
+    >
+    Vikaram Rao
+  </a>
+</td>
           <td>aarav@example.com</td>
           <td>9876543210</td>
+       <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
         <tr>
+            <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">02</span>
+</td>
+
           <td>C002</td>
-          <td>Priya Sharma</td>
+          <td>Avner</td>
+          <td>C002</td>
+         <td>
+  <a href="#"
+     onclick="openModal('Priya Mehta', 'C124', 'priya@example.com', '9876543218')"
+     data-address="789, Lake View Road"
+     data-company="DEF Solutions"
+    >
+    Priya Mehta
+  </a>
+</td>
+
           <td>priya@example.com</td>
           <td>9123456780</td>
+         
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
         <tr>
+           <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">03</span>
+</td>
+
+             <td>C003</td>
+             <td>Aurelius</td>
           <td>C003</td>
-          <td>Rohan Gupta</td>
+          <td>
+  <a href="#"
+     onclick="openModal('Rohit Mehta', 'C126', 'rohit@example.com', '9876543218')"
+     data-address="321, Green Park"
+     data-company="GHI Enterprises"
+     >
+    Rohit Verma
+  </a>
+</td>
+
           <td>rohan@example.com</td>
           <td>9812345678</td>
+        
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
         <tr>
+        <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">04</span>
+</td>
+
           <td>C004</td>
-          <td>Kavita Nair</td>
+          <td>Florian</td>
+          <td>C004</td>
+            <td>
+  <a href="#"
+     onclick="openModal('Kavita Naur', 'C128', 'kavita@example.com', '9876543220')"
+     data-address="654, Sunset Boulevard"
+     data-company="JKL Innovations"
+     data-age="29">
+    Kavita Naur
+  </a>
+</td>
+
           <td>kavita@example.com</td>
           <td>9001234567</td>
+        
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
         <tr>
+        <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">05</span>
+</td>
+
           <td>C005</td>
-          <td>Neeraj Verma</td>
+          <td>Ozias</td>
+          <td>C005</td>
+        
+           <td>
+  <a href="#"
+     onclick="openModal('Neeraj Verma', 'C140', 'neeraj@example.com', '9876543220')"
+     data-address="123, Main Street"
+     data-company="ABC Corp"
+     >
+    Neeraj Verma
+  </a>
+</td>
+
+        
           <td>neeraj@example.com</td>
           <td>9933221100</td>
+       
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
-        <tr>
+        <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">06</span>
+</td>
+
+              <td>C006</td>
+              <td>Stellan</td>
           <td>C006</td>
-          <td>Sneha Joshi</td>
+        <td>
+  <a href="#"
+     onclick="openModal('Sneha Joshi', 'C140', 'neeraj@example.com', '9876543220')"
+     data-address="987, River Side"
+     data-company="MNO Technologies"
+    >
+    Sneha Joshi
+  </a>
+</td>
+
           <td>sneha@example.com</td>
           <td>9898989898</td>
+         
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
         <tr>
+         <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">07</span>
+</td>
+
+            <td>C007</td>
+            <td>Rome</td>
           <td>C007</td>
-          <td>Ritika Singh</td>
+         <td>
+  <a href="#"
+     onclick="openModal('Ritika Singh', 'C480', 'neeraj@example.com', '9876543220')"
+     data-address="543, Hill Top Road"
+     data-company="PQR Solutions"
+   >
+    Ritika Singh
+  </a>
+</td>
+
           <td>ritika@example.com</td>
           <td>9871234560</td>
+        
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
         <tr>
+         <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">08</span>
+</td>
+
+            <td>C008</td>
+            <td>Rome</td>
           <td>C008</td>
-          <td>Mohit Sinha</td>
+         <td>
+  <a href="#"
+     onclick="openModal('Mohit Sinha', 'C140', 'neeraj@example.com', '9876543220')"
+     data-address="222, City Center"
+     data-company="STU Enterprises"
+     >
+    Mohit Sinha
+  </a>
+</td>
+
           <td>mohit@example.com</td>
           <td>9887766554</td>
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
         <tr>
+            <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">09</span>
+</td>
+
+            <td>C009</td>
+            <td>Orson</td>
           <td>C009</td>
-          <td>Anjali Yadav</td>
+           <td>
+  <a href="#"
+     onclick="openModal('Anjali Yadav', 'C140', 'neeraj@example.com', '9876543220')"
+     data-address="789, Rose Garden"
+     data-company="VWX Ltd"
+    >
+    Anjali Yadav
+  </a>
+</td>
+
           <td>anjali@example.com</td>
           <td>9776655443</td>
+      
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
         <tr>
+            <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">10</span>
+</td>
+
           <td>C010</td>
-          <td>Vikram Rao</td>
+          <td>Montgomery</td>
+          <td>C010</td>
+ <td>
+  <a href="#"
+     onclick="openModal('Vikaram Rao', 'C140', 'neeraj@example.com', '9876543220')"
+     data-address="456, Park Street"
+     data-company="XYZ Pvt Ltd"
+    >
+    Vikaram Rao
+  </a>
+</td>
+
           <td>vikram@example.com</td>
           <td>9665544332</td>
+       
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
+        </tr>
+        <td style="position: relative;">
+  <input type="checkbox" class="row-checkbox" 
+         style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
+  <span style="display: block; text-align: center;">11</span>
+</td>
+
+         <td>C011</td>
+          <td>Montgomery</td>
+          <td>C010</td>
+        <td>
+<a href="#"
+   onclick="openModal('Tej Singh', 'C140', 'neeraj@example.com', '9876543220')"
+   data-address="159, Market Road"
+   data-company="LMN Corp">
+   Tej Singh
+</a>
+
+</td>
+
+          <td>vikram@example.com</td>
+          <td>9665544332</td>
+       
+          <td> <select class="status-dropdown">
+          <option value="completed" selected>Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+        </td>
         </tr>
       </tbody>
     </table>
+<div id="clientModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Client Details Form</h2>
+<form id="clientForm">
+  <label for="clientName">Name:</label>
+  <input type="text" id="clientName" name="clientName" required>
+
+  <label for="clientCode">Client Code:</label>
+  <input type="text" id="clientCode" name="clientCode" required>
+
+  <label for="clientEmail">Email:</label>
+  <input type="email" id="clientEmail" name="clientEmail" required>
+
+  <label for="clientPhone">Phone:</label>
+  <input type="tel" id="clientPhone" name="clientPhone" required>
+
+  <label for="clientAddress">Address:</label>
+  <input type="text" id="clientAddress" name="clientAddress" required>
+
+  <label for="clientCompany">Company Name:</label>
+  <input type="text" id="clientCompany" name="clientCompany" required>
+
+      
+
+  <button type="submit">Submit</button>
+  <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+
+
+    </form>
   </div>
+</div>
 
   <script src="script.js"></script>
+
 </body>
 </html>

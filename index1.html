@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select All Working Example</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    td, th {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    .checkbox-cell {
+      position: relative;
+    }
+    .row-checkbox {
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+
+<table class="client-table">
+  <thead>
+    <tr>
+      <th><input type="checkbox" id="selectAll"> S.No</th>
+      <th>Service Code</th>
+      <th>Service Engineer</th>
+      <th>Client Code</th>
+      <th>Name</th>
+      <th>Email ID</th>
+      <th>Phone Number</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="checkbox-cell">
+        <input type="checkbox" class="row-checkbox" />
+        <span style="margin-left: 20px;">01</span>
+      </td>
+      <td>SC001</td>
+      <td>Engineer 1</td>
+      <td>CC001</td>
+      <td>Client A</td>
+      <td>clientA@example.com</td>
+      <td>1234567890</td>
+      <td>Active</td>
+    </tr>
+    <tr>
+      <td class="checkbox-cell">
+        <input type="checkbox" class="row-checkbox" />
+        <span style="margin-left: 20px;">02</span>
+      </td>
+      <td>SC002</td>
+      <td>Engineer 2</td>
+      <td>CC002</td>
+      <td>Client B</td>
+      <td>clientB@example.com</td>
+      <td>9876543210</td>
+      <td>Inactive</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+  // Get select all checkbox
+  const selectAll = document.getElementById('selectAll');
+  const rowCheckboxes = document.querySelectorAll('.row-checkbox');
+
+  // On Select All click
+  selectAll.addEventListener('change', function() {
+    rowCheckboxes.forEach(function(checkbox) {
+      checkbox.checked = selectAll.checked;
+    });
+  });
+
+  // On individual checkbox click
+  rowCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      // If any one is unchecked, uncheck selectAll
+      if (!checkbox.checked) {
+        selectAll.checked = false;
+      } else {
+        // If all are checked, tick selectAll
+        const allChecked = Array.from(rowCheckboxes).every(cb => cb.checked);
+        selectAll.checked = allChecked;
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

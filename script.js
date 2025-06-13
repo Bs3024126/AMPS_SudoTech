@@ -30,74 +30,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Topbar dropdown
-  const toggleBtn = document.getElementById('dropdownToggle');
-  const dropdownMenu = document.getElementById('dropdownMenu');
+  // Dropdown toggles (Reusable function)
+  function setupDropdown(toggleId, menuId) {
+    const toggleBtn = document.getElementById(toggleId);
+    const dropdownMenu = document.getElementById(menuId);
 
-  if (toggleBtn && dropdownMenu) {
-    toggleBtn.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('hidden');
-    });
-
-    dropdownMenu.querySelectorAll('li').forEach(item => {
-      item.addEventListener('click', () => {
-        toggleBtn.innerHTML = `<i class="fa fa-calendar"></i> ${item.textContent} <i class="fa fa-chevron-down"></i>`;
-        dropdownMenu.classList.add('hidden');
+    if (toggleBtn && dropdownMenu) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        dropdownMenu.classList.toggle('hidden');
       });
-    });
+
+      // Close dropdown on outside click
+      document.addEventListener('click', function (e) {
+        if (!toggleBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.add('hidden');
+        }
+      });
+    }
   }
 
-  // User Management Dropdown
-  const userDropdownToggle = document.getElementById("userManagementToggle");
-  const userDropdown = document.getElementById("userDropdown");
-
-  if (userDropdownToggle && userDropdown) {
-    userDropdownToggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      userDropdown.classList.toggle("hidden");
-    });
-  }
-
-  // Service Dropdown
-  const serviceToggle = document.getElementById("ServiceToggle");
-  const serviceDropdown = document.getElementById("serviceDropdown");
-
-  if (serviceToggle && serviceDropdown) {
-    serviceToggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      serviceDropdown.classList.toggle("hidden");
-    });
-  }
-  // Client Dropdown
-const clientToggle = document.getElementById("clientToggle");
-const clientDropdown = document.getElementById("clientDropdown");
-
-if (clientToggle && clientDropdown) {
-  clientToggle.addEventListener("click", function (e) {
-    e.preventDefault();
-    clientDropdown.classList.toggle("hidden");
-  });
-}
-
- 
-  // Click outside to close dropdowns
-  document.addEventListener("click", function (e) {
-    if (!toggleBtn?.contains(e.target) && !dropdownMenu?.contains(e.target)) {
-      dropdownMenu?.classList.add("hidden");
-    }
-    if (!userDropdownToggle?.contains(e.target) && !userDropdown?.contains(e.target)) {
-      userDropdown?.classList.add("hidden");
-    }
-    if (!serviceToggle?.contains(e.target) && !serviceDropdown?.contains(e.target)) {
-      serviceDropdown?.classList.add("hidden");
-    }
-  });
+  setupDropdown('dropdownToggle', 'dropdownMenu');
+  setupDropdown('userManagementToggle', 'userDropdown');
+  setupDropdown('ServiceToggle', 'serviceDropdown');
+  setupDropdown('clientToggle', 'clientDropdown');
 
   // Chart: Audience Line Chart
   const audienceCanvas = document.getElementById("audienceChart");
   if (audienceCanvas && audienceCanvas.getContext) {
-    const ctx = audienceCanvas.getContext("2d");
-    new Chart(ctx, {
+    new Chart(audienceCanvas.getContext("2d"), {
       type: "line",
       data: {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -128,8 +89,7 @@ if (clientToggle && clientDropdown) {
   // Chart: Visitors Bar Chart
   const visitorCanvas = document.getElementById("visitorsChart");
   if (visitorCanvas && visitorCanvas.getContext) {
-    const ctx = visitorCanvas.getContext("2d");
-    new Chart(ctx, {
+    new Chart(visitorCanvas.getContext("2d"), {
       type: "bar",
       data: {
         labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -141,9 +101,7 @@ if (clientToggle && clientDropdown) {
       },
       options: {
         plugins: { legend: { display: false } },
-        scales: {
-          y: { beginAtZero: true }
-        }
+        scales: { y: { beginAtZero: true } }
       }
     });
   }
@@ -151,9 +109,6 @@ if (clientToggle && clientDropdown) {
   // Add Service Form Toggle
   const toggleFormBtn = document.getElementById('toggleFormBtn');
   const serviceForm = document.getElementById('serviceForm');
-  const addServiceForm = document.getElementById('addServiceForm');
-  const serviceTableBody = document.getElementById('serviceTableBody');
-  const searchBox = document.getElementById('searchBox');
 
   if (toggleFormBtn && serviceForm) {
     toggleFormBtn.addEventListener('click', () => {
@@ -164,7 +119,9 @@ if (clientToggle && clientDropdown) {
   }
 
   // Add Service Form Submission
-  if (addServiceForm) {
+  const addServiceForm = document.getElementById('addServiceForm');
+  const serviceTableBody = document.getElementById('serviceTableBody');
+  if (addServiceForm && serviceTableBody) {
     addServiceForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -198,74 +155,109 @@ if (clientToggle && clientDropdown) {
   }
 
   // Search Filter
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.addEventListener('input', () => {
+      const filter = searchBox.value.toLowerCase();
+      const rows = serviceTableBody.getElementsByTagName('tr');
+      let hasMatch = false;
 
+      Array.from(rows).forEach(row => {
+        const text = row.innerText.toLowerCase();
+        if (text.includes(filter)) {
+          row.style.display = '';
+          hasMatch = true;
+        } else {
+          row.style.display = 'none';
+        }
+      });
 
-searchBox.addEventListener('input', () => {
-  const filter = searchBox.value.toLowerCase();
-  const rows = serviceTableBody.getElementsByTagName('tr');
-  let hasMatch = false;
-
-  Array.from(rows).forEach(row => {
-    const text = row.innerText.toLowerCase();
-    if (text.includes(filter)) {
-      row.style.display = '';
-      hasMatch = true;
-    } else {
-      row.style.display = 'none';
-    }
-  });
-
-  // No result row
-  let noResultsRow = document.getElementById('noResultsRow');
-  if (!hasMatch) {
-    if (!noResultsRow) {
-      noResultsRow = document.createElement('tr');
-      noResultsRow.id = 'noResultsRow';
-      noResultsRow.innerHTML = `<td colspan="5" style="text-align:center;">No matching services found.</td>`;
-      serviceTableBody.appendChild(noResultsRow);
-    }
-  } else if (noResultsRow) {
-    noResultsRow.remove();
+      // No result row
+      let noResultsRow = document.getElementById('noResultsRow');
+      if (!hasMatch) {
+        if (!noResultsRow) {
+          noResultsRow = document.createElement('tr');
+          noResultsRow.id = 'noResultsRow';
+          noResultsRow.innerHTML = `<td colspan="5" style="text-align:center;">No matching services found.</td>`;
+          serviceTableBody.appendChild(noResultsRow);
+        }
+      } else if (noResultsRow) {
+        noResultsRow.remove();
+      }
+    });
   }
-});
 
-
+  // Open/Close Overlay (Form)
   const openFormBtn = document.getElementById("openFormBtn");
   const closeFormBtn = document.getElementById("closeFormBtn");
   const overlay = document.getElementById("overlay");
 
-  openFormBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    overlay.style.display = "flex";
-  });
+  if (openFormBtn && closeFormBtn && overlay) {
+    openFormBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      overlay.style.display = "flex";
+    });
 
-  closeFormBtn.addEventListener("click", function () {
-    overlay.style.display = "none";
-  });
-
-  overlay.addEventListener("click", function (e) {
-    if (e.target === overlay) {
+    closeFormBtn.addEventListener("click", function () {
       overlay.style.display = "none";
-    }
+    });
+
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) {
+        overlay.style.display = "none";
+      }
+    });
+  }
+
+});
+
+// Modal Functions (Global Scope)
+function openModal(event, name, code, email, phone) {
+  event.preventDefault();
+
+  document.getElementById('clientName').value = name;
+  document.getElementById('clientCode').value = code;
+  document.getElementById('clientEmail').value = email;
+  document.getElementById('clientPhone').value = phone;
+
+  const link = event.currentTarget;
+  const address = link.getAttribute('data-address');
+  const company = link.getAttribute('data-company');
+
+  document.getElementById('clientAddress').value = address;
+  document.getElementById('clientCompany').value = company;
+
+  document.getElementById('clientModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('clientModal').style.display = 'none';
+}
+
+
+
+// ------------  -----------//
+ // Get select all checkbox
+  const selectAll = document.getElementById('selectAll');
+  const rowCheckboxes = document.querySelectorAll('.row-checkbox');
+
+  // On Select All click
+  selectAll.addEventListener('change', function() {
+    rowCheckboxes.forEach(function(checkbox) {
+      checkbox.checked = selectAll.checked;
+    });
   });
 
-
-
-
-});
-// Open form
-document.getElementById("openFormBtn").onclick = function () {
-  document.querySelector(".overlay").style.display = "flex";
-};
-
-// Close form using "Cancel" button
-document.querySelector(".btn.cancel").onclick = function () {
-  document.querySelector(".overlay").style.display = "none";
-};
-
-// Close form using ✖ icon
-document.querySelector(".form-popup").addEventListener("click", function (e) {
-  if (e.target.textContent === "✖") {
-    document.querySelector(".overlay").style.display = "none";
-  }
-});
+  // On individual checkbox click
+  rowCheckboxes.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+      // If any one is unchecked, uncheck selectAll
+      if (!checkbox.checked) {
+        selectAll.checked = false;
+      } else {
+        // If all are checked, tick selectAll
+        const allChecked = Array.from(rowCheckboxes).every(cb => cb.checked);
+        selectAll.checked = allChecked;
+      }
+    });
+  });
