@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Amps Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="ourservices.css"/>
+  <link rel="stylesheet" href="client.css"/>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   
@@ -21,86 +21,93 @@
 <div class="sidebar">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw3YAtKhDsT9M192HvbcnH-qDTrRawqtwsu9NFUDZRMkUDFMFVDMrarwRLNEalWQ2HzeI&usqp=CAU" alt="logo-small" class="logo-md" width="150">
 
- 
-    <ul>
-      <li class="active">
-        <a href="dashboard1.html">
-          <i class="fas fa-lightbulb"></i> <span>Dashboard</span>
-        </a>
-      </li> 
-      
-      
-   <li class="relative">
-       
+  <ul>
+    <li class="active">
+      <a href="dashboard1.html">
+        <i class="fas fa-lightbulb"></i> <span>Dashboard</span>
+      </a>
+    </li> 
+
+    <li class="relative">
       <a href="#" id="userManagementToggle" class="flex items-center justify-between">
-          <span><i class="fas fa-user"></i> User Management</span>
-          <i class="fas fa-caret-down ml-2"></i>
-        </a>
-        <ul id="userDropdown" class="hidden ml-6">
-   <li class="active">
-        <a href="user.html">
-          <i class="fas fa-user"></i> <span>user</span>
-        </a>
+        <span><i class="fas fa-user"></i> User Management</span>
+        <i class="fas fa-caret-down ml-2"></i>
+      </a>
+      <ul id="userDropdown" class="hidden ml-6">
+        <li class="active"style="margin-top:4px; margin-bottom:10px;">
+          <a href="user.html">
+            <i class="fas fa-user"></i> <span>User</span>
+          </a>
         </li>
-       <li class="new">
+        <li class="new"style="margin-top:4px; margin-bottom:10px;">
           <a href="Role.html">
-          <i class="fas fa-user-circle"></i> <span>Role</span>
-        </a>
-      </li> 
-      </ul>
-    </li>
-    <li class="services">
-       
-      <a href="#" id="ServiceToggle" class="flex items-center justify-between">
-          <span><i class="fas fa-tools "></i>  Services</span>
-          <i class="fas fa-caret-down ml-1"></i>
-        </a>
-        <ul id="serviceDropdown" class="hidden ml-6">
-               <li class="actives">
-        <a href="ourservices.html">
-          <i class="fas fa-user"></i> <span> Our services </span>
-        </a>
-        </li>
-   <li class="activew">
-        <a href="New service.html">
-          <i class="fas fa-user"></i> <span>new services</span>
-        </a>
-        </li>
-       <li class="new1">
-          <a href="Old services.html">
-          <i class="fas fa-user-circle"></i> <span>Old services</span>
-        </a>
+            <i class="fas fa-user-circle"></i> <span>Role</span>
+          </a>
         </li> 
       </ul>
     </li>
- <nav>
-  <ul>
-    <li class="client">
+
+    <li class="services">
+      <a href="#" id="ServiceToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-tools"></i> Services</span>
+        <i class="fas fa-caret-down ml-1"></i>
+      </a>
+      <ul id="serviceDropdown" class="hidden ml-6">
+        <li class="actives"style="margin-top:4px; margin-bottom:8px;display: inline-block">
+          <a href="ourservices.html">
+            <i class="fas fa-user"></i> <span>Our services</span>
+          </a>
+        </li>
+        <li class="activew"style="margin-top:4px; margin-bottom:8px;display: inline-block">
+          <a href="New service.html" >
+            <i class="fas fa-user"></i> <span>New services</span>
+          </a>
+        </li>
+        <li class="new1"style="margin-top:4px; margin-bottom:8px;display: inline-block">
+          <a href="Old services.html">
+            <i class="fas fa-user-circle"></i> <span>Old services</span>
+          </a>
+        </li> 
+      </ul>
+    </li>
+
+    <li class="client"style=" margin-top:-10px;margin-bottom:10px; margin-right:-10px;inline-block;">
       <a href="#" id="clientToggle" class="flex items-center justify-between">
         <span><i class="fas fa-user"></i> Client</span>
         <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
       </a>
       <ul id="clientDropdown" class="hidden ml-6">
-        <li class="activenew">
+        <li class="active"style="margin-top:2px; margin-bottom:-4px;display: inline-block">
           <a href="Clientpage.html">
             <i class="fas fa-user"></i> <span>Clients</span>
           </a>
-        </li>
-        <li class="activenew1">
-          <a href="Society.html">
-            <i class="fas fa-user"></i> <span>Societies</span>
-          </a>
+          </li>
+       <li class="activenew1"style="margin-top:-24px; margin-bottom:-10px;display: inline-block">
+  <a href="Society.html">
+    <i class="fas fa-user"></i> <span>Societies</span>
+  </a>
         </li>
       </ul>
+      </li>
+      </ul>
+      <ul>
+  <li class="hms">
+    <a href="#" id="hmsToggle" class="flex items-center justify-between">
+      <span><i class="fas fa-user"></i> HMS</span>
+      <i class="fas fa-caret-down ml-2" style="margin-right: 5px;"></i>
+    </a>
+    <ul id="hmsDropdown" class="hidden ml-6">
+      <li class="active">
+        <a href="HMS.html">
+          <i class="fas fa-user"></i> <span>HMS</span>
+        </a>
+      </li>
+    </ul>
     </li>
   </ul>
-</nav>
 
+</div>
 
-  
-</div> 
-
-   
    <div class="main">
     <div class="company-info">
     <div class="left">
@@ -112,11 +119,12 @@
   </div>
     
     <header>
-      <i class="fa-solid fa-bars" id="dropdown"></i>
+         <i class="fa-solid fa-bars" id="dropdown"></i>
     <h1 style="font-size: 18px;">Good Morning, James!</h1>
+    
       <input type="text" placeholder="Search here...">
       <div class="profile-pic"></div>
-    </header>
+    </header> 
    <div class="services-container">
     <div class="service-card">
       <img src="data:image/jpeg;base64,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" class="service-image">

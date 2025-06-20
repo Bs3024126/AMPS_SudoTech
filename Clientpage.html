@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Amps Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="ourservices.css"/>
+  <link rel="stylesheet" href="client.css"/>
+  
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   
@@ -20,86 +22,93 @@
 <div class="sidebar">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw3YAtKhDsT9M192HvbcnH-qDTrRawqtwsu9NFUDZRMkUDFMFVDMrarwRLNEalWQ2HzeI&usqp=CAU" alt="logo-small" class="logo-md" width="150">
 
- 
-    <ul>
-      <li class="active">
-        <a href="dashboard1.html">
-          <i class="fas fa-lightbulb"></i> <span>Dashboard</span>
-        </a>
-      </li> 
-      
-      
-   <li class="relative">
-       
+  <ul>
+    <li class="active">
+      <a href="dashboard1.html">
+        <i class="fas fa-lightbulb"></i> <span>Dashboard</span>
+      </a>
+    </li> 
+
+    <li class="relative">
       <a href="#" id="userManagementToggle" class="flex items-center justify-between">
-          <span><i class="fas fa-user"></i> User Management</span>
-          <i class="fas fa-caret-down ml-2"></i>
-        </a>
-        <ul id="userDropdown" class="hidden ml-6">
-   <li class="active">
-        <a href="user.html">
-          <i class="fas fa-user"></i> <span>user</span>
-        </a>
+        <span><i class="fas fa-user"></i> User Management</span>
+        <i class="fas fa-caret-down ml-2"></i>
+      </a>
+      <ul id="userDropdown" class="hidden ml-6">
+        <li class="active"style="margin-top:4px; margin-bottom:10px;">
+          <a href="user.html">
+            <i class="fas fa-user"></i> <span>User</span>
+          </a>
         </li>
-       <li class="new">
+        <li class="new"style="margin-top:4px; margin-bottom:10px;">
           <a href="Role.html">
-          <i class="fas fa-user-circle"></i> <span>Role</span>
-        </a>
-      </li> 
+            <i class="fas fa-user-circle"></i> <span>Role</span>
+          </a>
+        </li> 
       </ul>
     </li>
-    <li class="services">
-       
-      <a href="#" id="ServiceToggle" class="flex items-center justify-between">
-          <span><i class="fas fa-tools "></i>  Services</span>
-          <i class="fas fa-caret-down ml-1"></i>
-        </a>
-        <ul id="serviceDropdown" class="hidden ml-6">
-               <li class="actives">
-        <a href="ourservices.html">
-          <i class="fas fa-user"></i> <span> Our services </span>
-        </a>
-        </li>
-   <li class="activew">
-        <a href="New service.html">
-          <i class="fas fa-user"></i> <span>new services</span>
-        </a>
-        </li>
-       <li class="new1">
-          <a href="Old services.html">
-          <i class="fas fa-user-circle"></i> <span>Old services</span>
-        </a>
-      </li> 
-    </ul>
-  </li>
 
-     <nav>
-  <ul>
-    <li class="client">
+    <li class="services">
+      <a href="#" id="ServiceToggle" class="flex items-center justify-between">
+        <span><i class="fas fa-tools"></i> Services</span>
+        <i class="fas fa-caret-down ml-1"></i>
+      </a>
+      <ul id="serviceDropdown" class="hidden ml-6">
+        <li class="actives"style="margin-top:4px; margin-bottom:8px;display: inline-block">
+          <a href="ourservices.html">
+            <i class="fas fa-user"></i> <span>Our services</span>
+          </a>
+        </li>
+        <li class="activew"style="margin-top:4px; margin-bottom:8px;display: inline-block">
+          <a href="New service.html" >
+            <i class="fas fa-user"></i> <span>New services</span>
+          </a>
+        </li>
+        <li class="new1"style="margin-top:4px; margin-bottom:8px;display: inline-block">
+          <a href="Old services.html">
+            <i class="fas fa-user-circle"></i> <span>Old services</span>
+          </a>
+        </li> 
+      </ul>
+    </li>
+
+    <li class="client"style=" margin-top:-10px;margin-bottom:10px; margin-right:-10px;inline-block;">
       <a href="#" id="clientToggle" class="flex items-center justify-between">
         <span><i class="fas fa-user"></i> Client</span>
         <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
       </a>
       <ul id="clientDropdown" class="hidden ml-6">
-        <li class="active">
+        <li class="active"style="margin-top:2px; margin-bottom:-4px;display: inline-block">
           <a href="Clientpage.html">
             <i class="fas fa-user"></i> <span>Clients</span>
           </a>
-        </li>
-        <li class="activenew1">
-          <a href="Society.html">
-            <i class="fas fa-user"></i> <span>Societies</span>
-          </a>
+          </li>
+       <li class="activenew1"style="margin-top:-24px; margin-bottom:-10px;display: inline-block">
+  <a href="Society.html">
+    <i class="fas fa-user"></i> <span>Societies</span>
+  </a>
         </li>
       </ul>
+      </li>
+      </ul>
+      <ul>
+  <li class="hms">
+    <a href="#" id="hmsToggle" class="flex items-center justify-between">
+      <span><i class="fas fa-user"></i> HMS</span>
+      <i class="fas fa-caret-down ml-2" style="margin-right: 5px;"></i>
+    </a>
+    <ul id="hmsDropdown" class="hidden ml-6">
+      <li class="active">
+        <a href="HMS.html">
+          <i class="fas fa-user"></i> <span>HMS</span>
+        </a>
+      </li>
+    </ul>
     </li>
   </ul>
-</nav>
 
+</div>
 
-</div> 
-
-   
    <div class="main">
     <div class="company-info">
     <div class="left">
@@ -111,12 +120,36 @@
   </div>
     
     <header>
-      <i class="fa-solid fa-bars" id="dropdown"></i>
+         <i class="fa-solid fa-bars" id="dropdown"></i>
     <h1 style="font-size: 18px;">Good Morning, James!</h1>
-     <h2>Client List</h2>
+    
       <input type="text" placeholder="Search here...">
       <div class="profile-pic"></div>
-    </header>
+    </header> 
+      <div class="table-container1">
+     <h1>New Client</h1>
+      <input type="text" id="searchBox" placeholder="Search services..." />
+      <a href="#" class="btn-add-service" id="openFormBtn" style="background-color: green; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block;">➕ Add New Client</a>
+
+    </div>
+   <div class="overlay" id="overlay">
+    <div class="form-popup">
+      <h2>Contact Form</h2>
+     <form id="serviceForm">
+    <input type="text" id="serviceCode" placeholder="Service Code" required />
+    <input type="text" id="serviceName" placeholder="Service Name" required />
+    <input type="text" id="servicePrice" placeholder="Price (e.g., ₹500)" required />
+    <input type="text" id="serviceDuration" placeholder="Duration (e.g., 1 Hour)" required />
+    <select id="serviceAvailability" required>
+      <option value="">-- Availability --</option>
+      <option value="Available">Available</option>
+      <option value="Unavailable">Unavailable</option>
+    </select>
+    <button type="submit" class="btn submit-btn">Add Service</button>
+    <button type="button" class="btn close-btn" id="closeFormBtn">Close</button>
+  </form>
+    </div>
+  </div>
      
     <table class="client-table">
       <thead>
@@ -151,16 +184,15 @@
           <td>C001</td>
 <td>Noam</td>
           <td>C001</td>
-     <td>
+  <td>
   <a href="#"
-     onclick="openModal('Vikaram Rao', 'C140', 'neeraj@example.com', '9876543220')"
+     onclick="openClientModal('Vikaram Rao', 'C140', 'neeraj@example.com', '9876543220', '456, Park Street', 'XYZ Pvt Ltd')"
      data-address="456, Park Street"
-     data-company="XYZ Pvt Ltd"
-    >
+     data-company="XYZ Pvt Ltd">
     Vikaram Rao
   </a>
 </td>
-          <td>aarav@example.com</td>
+   <td>aarav@example.com</td>
           <td>9876543210</td>
        <td> <select class="status-dropdown">
           <option value="completed" selected>Completed</option>
@@ -180,7 +212,7 @@
           <td>C002</td>
          <td>
   <a href="#"
-     onclick="openModal('Priya Mehta', 'C124', 'priya@example.com', '9876543218')"
+     onclick="openClientModal('Priya Mehta', 'C124', 'priya@example.com', '9876543218')"
      data-address="789, Lake View Road"
      data-company="DEF Solutions"
     >
@@ -209,7 +241,7 @@
           <td>C003</td>
           <td>
   <a href="#"
-     onclick="openModal('Rohit Mehta', 'C126', 'rohit@example.com', '9876543218')"
+     onclick="openClientModal('Rohit Mehta', 'C126', 'rohit@example.com', '9876543218')"
      data-address="321, Green Park"
      data-company="GHI Enterprises"
      >
@@ -238,12 +270,20 @@
           <td>C004</td>
             <td>
   <a href="#"
-     onclick="openModal('Kavita Naur', 'C128', 'kavita@example.com', '9876543220')"
-     data-address="654, Sunset Boulevard"
-     data-company="JKL Innovations"
-     data-age="29">
-    Kavita Naur
-  </a>
+   onclick="openClientModal(
+       'Kavita Naur', 
+       'C128', 
+       'kavita@example.com', 
+       '9876543220', 
+       this.getAttribute('data-address'), 
+       this.getAttribute('data-company'), 
+       this.getAttribute('data-age')
+   )"
+   data-address="654, Sunset Boulevard"
+   data-company="JKL Innovations"
+   data-age="29">
+  Kavita Naur
+</a>
 </td>
 
           <td>kavita@example.com</td>
@@ -268,7 +308,7 @@
         
            <td>
   <a href="#"
-     onclick="openModal('Neeraj Verma', 'C140', 'neeraj@example.com', '9876543220')"
+     onclick="openClientModal('Neeraj Verma', 'C140', 'neeraj@example.com', '9876543220')"
      data-address="123, Main Street"
      data-company="ABC Corp"
      >
@@ -297,7 +337,7 @@
           <td>C006</td>
         <td>
   <a href="#"
-     onclick="openModal('Sneha Joshi', 'C140', 'neeraj@example.com', '9876543220')"
+     onclick="openClientModal('Sneha Joshi', 'C140', 'neeraj@example.com', '9876543220')"
      data-address="987, River Side"
      data-company="MNO Technologies"
     >
@@ -326,7 +366,7 @@
           <td>C007</td>
          <td>
   <a href="#"
-     onclick="openModal('Ritika Singh', 'C480', 'neeraj@example.com', '9876543220')"
+     onclick="openClientModal('Ritika Singh', 'C480', 'neeraj@example.com', '9876543220')"
      data-address="543, Hill Top Road"
      data-company="PQR Solutions"
    >
@@ -355,7 +395,7 @@
           <td>C008</td>
          <td>
   <a href="#"
-     onclick="openModal('Mohit Sinha', 'C140', 'neeraj@example.com', '9876543220')"
+     onclick="openClientModal('Mohit Sinha', 'C140', 'neeraj@example.com', '9876543220')"
      data-address="222, City Center"
      data-company="STU Enterprises"
      >
@@ -383,7 +423,7 @@
           <td>C009</td>
            <td>
   <a href="#"
-     onclick="openModal('Anjali Yadav', 'C140', 'neeraj@example.com', '9876543220')"
+     onclick="openClientModal('Anjali Yadav', 'C140', 'neeraj@example.com', '9876543220')"
      data-address="789, Rose Garden"
      data-company="VWX Ltd"
     >
@@ -412,7 +452,7 @@
           <td>C010</td>
  <td>
   <a href="#"
-     onclick="openModal('Vikaram Rao', 'C140', 'neeraj@example.com', '9876543220')"
+     onclick="openClientModal('Vikaram Rao', 'C140', 'neeraj@example.com', '9876543220')"
      data-address="456, Park Street"
      data-company="XYZ Pvt Ltd"
     >
@@ -440,7 +480,7 @@
           <td>C010</td>
         <td>
 <a href="#"
-   onclick="openModal('Tej Singh', 'C140', 'neeraj@example.com', '9876543220')"
+   onclick="openClientModal('Tej Singh', 'C140', 'neeraj@example.com', '9876543220')"
    data-address="159, Market Road"
    data-company="LMN Corp">
    Tej Singh
@@ -461,7 +501,7 @@
     </table>
 <div id="clientModal" class="modal" style="display:none;">
   <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="close" onclick="closeClientModal()">&times;</span>
     <h2>Client Details Form</h2>
 <form id="clientForm">
   <label for="clientName">Name:</label>
@@ -485,7 +525,7 @@
       
 
   <button type="submit">Submit</button>
-  <button type="button" class="cancel" onclick="closeModal()">Cancel</button>
+  <button type="button" class="cancel" onclick="closeClientModal()">Cancel</button>
 
 
     </form>

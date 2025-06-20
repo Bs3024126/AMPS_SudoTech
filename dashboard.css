@@ -1,0 +1,958 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Layout */
+body {
+  display: flex;
+  background: #f7f9fc;
+  color: #2c2c2c;
+
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #fff;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  margin-top: -20px;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+
+.sidebar.active {
+  left: -200px;
+
+}
+
+.logo-md {
+  display: block;
+  margin: 0 auto 30px auto;
+  max-width: 100px;
+  height: 90px;
+  margin-bottom: -10px;
+}
+
+.sidebar ul {
+  list-style: none;
+
+}
+
+.sidebar li {
+
+  margin-bottom: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.2s;
+
+}
+
+
+
+
+.active a {
+  font-weight: b;
+
+
+}
+
+/* Main Content */
+.main {
+  margin-left: 200px;
+  flex: 1;
+
+  transition: margin-left 0.3s ease;
+  padding: 30px;
+}
+
+.main.shifted {
+  margin-left: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fdfdfd;
+  margin-top: 5px;
+  gap: 5px;
+  border-radius: 20px;
+  margin-left: -10px;
+  margin-right: -20px;
+
+}
+
+header i {
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  margin-left: 11px;
+}
+
+header h1 {
+  font-size: 20px;
+
+  font-weight: 700;
+  margin: 0;
+  margin-left: -40px;
+  color: #2d3748;
+  text-align: center;
+  position: relative;
+}
+
+header h2 {
+  position: absolute;
+  left: 55%;
+  font-size: 25px;
+  color: #15803d;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin: 0;
+
+}
+
+header input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  min-width: 200px;
+  margin-left: 700px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url('https://randomuser.me/api/portraits/men/32.jpg') center/cover;
+  margin-left: -40px;
+  margin-right: 20px;
+}
+
+.company-info {
+  background-color: #f5f5f5;
+  margin-top: -20px;
+  padding: 1px 20px;
+  display: flex;
+  margin-left: -30px;
+  margin-right: -40px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+}
+
+.company-info .left {
+  font-weight: bold;
+  color: #333;
+  font-size: 11px;
+}
+
+.company-info .right {
+  color: #555;
+  font-size: 11px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  margin-right: 1px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  flex: 1;
+  border-radius: 12px;
+  min-width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+
+.card p {
+  font-size: 14px;
+  color: #888;
+}
+
+.card h2 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.card .green {
+  color: green;
+  font-size: 13px;
+}
+
+.card .red {
+  color: red;
+  font-size: 13px;
+}
+
+.card img {
+  width: 50px;
+  height: 50px;
+}
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  justify-content: space-between;
+  margin-top: -40px;
+  margin-left: -50px;
+  padding: 40px;
+}
+
+tr.Avtar button tr.Avtar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+
+  border: 2px solid #ccc;
+}
+
+.audience,
+.visitors {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  flex: 1 1 45%;
+  max-width: 600px;
+}
+
+.audience h3,
+.visitors h3 {
+  margin-bottom: 10px;
+}
+
+#visitorTotal {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #28a745;
+}
+
+.details-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 15px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+
+}
+
+/* Toggle Button Style */
+.menu-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(199, 93, 93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+
+}
+
+.menu-toggle i {
+  font-size: 20px;
+  color: #333;
+}
+
+
+
+/* Report Widget Container */
+.report-widget {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+  margin-left: -10px;
+}
+
+/* Section Title */
+.report-widget h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+/* Horizontal scroll container */
+.report-scroll {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  max-width: 600%;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Individual Browser Report Card */
+.browser-report {
+  flex: 0 0 220px;
+
+  background: #f9fafc;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  max-width: 50%;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.browser-report:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Browser Icon */
+.browser-report img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Browser Info Text Container */
+.browser-report div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #444;
+  font-size: 14px;
+}
+
+/* Strong text styling */
+.browser-report strong {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+/* Smaller text style */
+.small-text {
+  font-size: 12px;
+  color: #999;
+}
+
+
+.green-text {
+  color: green;
+}
+
+.total-visits-widget {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  max-width: 100%;
+  margin-top: 30px;
+  margin-left: -10px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c2c2c;
+
+
+}
+
+.total-visits-widget h3 {
+  font-weight: 600;
+  font-size: 22px;
+
+  margin-bottom: 20px;
+
+}
+
+.visits-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+
+  font-size: 16px;
+
+
+}
+
+.visits-table thead th {
+  text-align: left;
+  padding: 14px 12px;
+
+  background: #f5f8fa;
+  color: #666;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+
+}
+
+.visits-table tbody tr {
+  background: #f9fafc;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.03);
+
+}
+
+.visits-table tbody tr td {
+  padding: 14px 12px;
+
+  vertical-align: middle;
+  color: #444;
+
+}
+
+.visits-table tbody tr td .small-text {
+  color: green;
+  font-size: 14px;
+
+  margin-left: 4px;
+}
+
+.green-text {
+  color: green;
+  font-weight: 600;
+}
+
+.red-text {
+  color: red;
+  font-weight: 600;
+}
+
+.arrow {
+  font-size: 12px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.arrow.up {
+  color: green;
+}
+
+.arrow.down {
+  color: red;
+}
+
+.update-text {
+  font-size: 12px;
+  color: #999;
+  margin-top: 12px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.refresh {
+  color: #e74c3c;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Main container flex layout */
+.main-container {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin-left: -30px;
+
+}
+
+/* Left section: Traffic Sources */
+.traffic-left {
+  flex: 1;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header in left */
+.traffic-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.traffic-header .dropdown {
+  cursor: pointer;
+  user-select: none;
+  color: #666;
+  font-weight: 500;
+}
+
+.traffic-header .dropdown i {
+  margin-right: 5px;
+}
+
+/* Gauge container */
+.gauge-container {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+}
+
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke: green;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease 0s;
+}
+
+.percentage {
+  fill: #333;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
+
+/* Titles and description */
+.direct-title {
+  font-size: 22px;
+  margin: 10px 0 5px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+/* Button style */
+.btn {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: green;
+}
+
+/* Right section: Organic Traffic */
+.traffic-right {
+  flex: 2;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header of map section */
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.map-header h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+#userManagementToggle i {
+  margin-left: -10px;
+}
+
+#userManagementToggle span {
+  font-size: 14px;
+
+
+}
+
+/* Dropdown in right */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#dropdownToggle {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#dropdownToggle i {
+  font-size: 16px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  width: 140px;
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: green;
+  color: white;
+}
+
+/* Hide dropdown by default */
+.hidden {
+  display: none;
+}
+
+/* Map container */
+.map-container {
+  position: relative;
+  flex-grow: 1;
+  min-height: 320px;
+  background: #e9f5ff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Map image */
+.map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Map points style */
+.map-points {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.map-points li {
+  position: absolute;
+  background: green;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: auto;
+  cursor: default;
+  user-select: none;
+
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+}
+
+
+
+#userManagementToggle {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+
+}
+
+
+
+
+
+
+
+.company-info {
+  background-color: #f5f5f5;
+  margin-top: -20px;
+  padding: 1px 20px;
+  display: flex;
+  margin-left: -30px;
+  margin-right: -40px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+}
+
+.company-info .left {
+  font-weight: bold;
+  color: #333;
+  font-size: 11px;
+}
+
+.company-info .right {
+  color: #555;
+  font-size: 11px;
+}
+
+
+/* Dropdown in right */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+#dropdownToggle {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#dropdownToggle i {
+  font-size: 16px;
+}
+
+
+
+/* Responsive Design */
+
+/* For tablets (width: 768px to 1024px) */
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .main {
+    margin-left: 180px;
+    padding: 20px;
+  }
+
+  header input {
+    margin-left: 200px;
+    min-width: 150px;
+  }
+
+  .cards {
+    justify-content: center;
+  }
+
+  .charts {
+    /* flex-direction: column; */
+    /* align-items: center; */
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .audience, .visitors {
+    max-width: 90%;
+  }
+
+  .report-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .traffic-left, .traffic-right {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* For mobile devices (width: 767px and below) */
+@media screen and (max-width: 767px) {
+  .sidebar {
+    left: -200px;
+    display: none;
+  }
+
+  .sidebar.active {
+    left: 0;
+    
+  }
+  .company-info{
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #dropdown{
+    display: none;
+  }
+
+  .main {
+    /* display: none; */
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    display: none;
+
+  }
+
+  header {
+    /* display: none; */
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  header h1, header h2 {
+    position: static;
+    transform: none;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  header input {
+    margin: 0 auto;
+    min-width: 80%;
+  }
+
+  .profile-pic {
+    margin: 0 auto;
+  }
+
+  /* .company-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  } */
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .charts {
+    flex-direction: column;
+    margin-left: 0;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 20px;
+  }
+
+  .audience, .visitors {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .report-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .browser-report {
+    flex: 0 0 80%;
+  }
+
+  .main-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .traffic-left, .traffic-right {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    right: 10px;
+  }
+
+  .map-container {
+    min-height: 200px;
+  }
+}

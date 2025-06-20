@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Amps Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
+
+  <link rel="stylesheet" href="dashboard.css"/>
+ 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   
@@ -27,18 +29,18 @@
       </a>
     </li> 
 
-    <li class="relative">
+    <li class="relative" style="margin-top:-8px;">
       <a href="#" id="userManagementToggle" class="flex items-center justify-between">
         <span><i class="fas fa-user"></i> User Management</span>
-        <i class="fas fa-caret-down ml-2"></i>
+        <i class="fas fa-caret-down ml-1"  style="margin-right:-2px; margin-top:4px;"></i>
       </a>
       <ul id="userDropdown" class="hidden ml-6">
-        <li class="active">
+        <li class="active"style="margin-top:4px; margin-bottom:10px;">
           <a href="user.html">
             <i class="fas fa-user"></i> <span>User</span>
           </a>
         </li>
-        <li class="new">
+        <li class="new"style="margin-top:4px; margin-bottom:10px;">
           <a href="Role.html">
             <i class="fas fa-user-circle"></i> <span>Role</span>
           </a>
@@ -46,55 +48,68 @@
       </ul>
     </li>
 
-    <li class="services">
+    <li class="services" style="margin-top:-10px;">
       <a href="#" id="ServiceToggle" class="flex items-center justify-between">
-        <span><i class="fas fa-tools"></i> Services</span>
-        <i class="fas fa-caret-down ml-1"></i>
+        <span><i class="fas fa-tools" ></i> Services</span>
+        <i class="fas fa-caret-down ml-1" style="margin-right:10px; margin-top:10px;"></i>
+
       </a>
       <ul id="serviceDropdown" class="hidden ml-6">
-        <li class="actives">
+        <li class="actives"style="margin-top:4px; margin-bottom:8px;display: inline-block">
           <a href="ourservices.html">
             <i class="fas fa-user"></i> <span>Our services</span>
           </a>
         </li>
-        <li class="activew">
+        <li class="activew"style="margin-top:4px; margin-bottom:8px;display: inline-block">
           <a href="New service.html">
             <i class="fas fa-user"></i> <span>New services</span>
           </a>
         </li>
-        <li class="new1">
+        <li class="new1"style="margin-top:4px; margin-bottom:8px;display: inline-block">
           <a href="Old services.html">
             <i class="fas fa-user-circle"></i> <span>Old services</span>
           </a>
         </li> 
       </ul>
     </li>
-
+<ul>
     <li class="client">
       <a href="#" id="clientToggle" class="flex items-center justify-between">
         <span><i class="fas fa-user"></i> Client</span>
         <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
       </a>
       <ul id="clientDropdown" class="hidden ml-6">
-        <li class="active">
+       <li class="active"style="margin-top:2px; margin-bottom:-4px;display: inline-block">
           <a href="Clientpage.html">
             <i class="fas fa-user"></i> <span>Clients</span>
           </a>
         </li>
     
-       <li class="activenew1">
-          <a href="Society.html">
-            <i class="fas fa-user"></i> <span>Societies</span>
-          </a>
-        </li>
+     <li class="activenew1"style="margin-top:10px; margin-bottom:-4px;display: inline-block">
+  <a href="Society.html">
+    <i class="fas fa-user"></i> <span>Societies</span>
+  </a>
+  </li>
       </ul>
     </li>
-  </ul>
+
+<ul>
+  <li class="hms">
+    <a href="#" id="hmsToggle" class="flex items-center justify-between">
+      <span><i class="fas fa-user"></i> HMS</span>
+      <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
+    </a>
+    <ul id="hmsDropdown" class="hidden ml-6">
+      <li class="active">
+        <a href="HMS.html">
+          <i class="fas fa-user"></i> <span>HMS</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 </div>
-
-
-   
    <div class="main">
     <div class="company-info">
     <div class="left">
@@ -113,21 +128,26 @@
     </header>
     <div class="cards">
       <div class="card">
-        <p>Sessions</p>
+        <p>Total Users</p>
         <h2>24k</h2>
         <span class="green">8.5% New Sessions Today</span>
       </div>
       <div class="card">
-        <p>Avg. Sessions</p>
+        <p>Total Services</p>
         <h2>00:18</h2>
         <span class="green">1.5% Weekly Avg.Sessions</span>
       </div>
       <div class="card">
-        <p>Bounce Rate</p>
+        <p> Total Clients</p>
         <h2>36.45%</h2>
         <span class="red">8% Up Bounce Rate Weekly</span>
       </div>
-    </div>
+       <div class="card">
+        <p>Total Services</p>
+        <h2>00:18</h2>
+        <span class="green">1.5% Weekly Avg.Sessions</span>
+      </div>
+      </div>
 
     <div class="charts">
   <div class="audience">

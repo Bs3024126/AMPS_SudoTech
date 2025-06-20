@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Amps Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="ourservices.css"/>
+  <link rel="stylesheet" href="client.css"/>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
   
@@ -33,12 +34,12 @@
         <i class="fas fa-caret-down ml-2"></i>
       </a>
       <ul id="userDropdown" class="hidden ml-6">
-        <li class="active">
+        <li class="active"style="margin-top:4px; margin-bottom:10px;">
           <a href="user.html">
             <i class="fas fa-user"></i> <span>User</span>
           </a>
         </li>
-        <li class="new">
+        <li class="new"style="margin-top:4px; margin-bottom:10px;">
           <a href="Role.html">
             <i class="fas fa-user-circle"></i> <span>Role</span>
           </a>
@@ -52,17 +53,17 @@
         <i class="fas fa-caret-down ml-1"></i>
       </a>
       <ul id="serviceDropdown" class="hidden ml-6">
-        <li class="actives">
+        <li class="actives"style="margin-top:4px; margin-bottom:8px;display: inline-block">
           <a href="ourservices.html">
             <i class="fas fa-user"></i> <span>Our services</span>
           </a>
         </li>
-        <li class="activew">
-          <a href="New service.html">
+        <li class="activew"style="margin-top:4px; margin-bottom:8px;display: inline-block">
+          <a href="New service.html" >
             <i class="fas fa-user"></i> <span>New services</span>
           </a>
         </li>
-        <li class="new1">
+        <li class="new1"style="margin-top:4px; margin-bottom:8px;display: inline-block">
           <a href="Old services.html">
             <i class="fas fa-user-circle"></i> <span>Old services</span>
           </a>
@@ -70,23 +71,38 @@
       </ul>
     </li>
 
-    <li class="client">
+    <li class="client"style=" margin-top:-10px;margin-bottom:10px; margin-right:-10px;inline-block;">
       <a href="#" id="clientToggle" class="flex items-center justify-between">
         <span><i class="fas fa-user"></i> Client</span>
         <i class="fas fa-caret-down ml-2" style="margin-right: 10px;"></i>
       </a>
       <ul id="clientDropdown" class="hidden ml-6">
-        <li class="active">
+        <li class="active"style="margin-top:2px; margin-bottom:-4px;display: inline-block">
           <a href="Clientpage.html">
-            <i class="fas fa-user"></i> <span>Client page</span>
+            <i class="fas fa-user"></i> <span>Clients</span>
           </a>
           </li>
-       <li class="activenew1">
-          <a href="Society.html">
-            <i class="fas fa-user"></i> <span>Societies</span>
-          </a>
+       <li class="activenew1"style="margin-top:-24px; margin-bottom:-10px;display: inline-block">
+  <a href="Society.html">
+    <i class="fas fa-user"></i> <span>Societies</span>
+  </a>
         </li>
       </ul>
+      </li>
+      </ul>
+      <ul>
+  <li class="hms">
+    <a href="#" id="hmsToggle" class="flex items-center justify-between">
+      <span><i class="fas fa-user"></i> HMS</span>
+      <i class="fas fa-caret-down ml-2" style="margin-right: 5px;"></i>
+    </a>
+    <ul id="hmsDropdown" class="hidden ml-6">
+      <li class="active">
+        <a href="HMS.html">
+          <i class="fas fa-user"></i> <span>HMS</span>
+        </a>
+      </li>
+    </ul>
     </li>
   </ul>
 
@@ -108,9 +124,32 @@
     
       <input type="text" placeholder="Search here...">
       <div class="profile-pic"></div>
-    </header>
-   <table class="society-table1"></table>
-<table>
+    </header> 
+     <div class="table-container1">
+     <h1>Societies</h1>
+      <input type="text" id="searchBox" placeholder="Search services..." />
+       <a href="#" class="btn-add-service" id="openFormBtn"style="color:white;background-color:Green">➕ Add New Society</a>
+    </div>
+   <div class="overlay" id="overlay">
+    <div class="form-popup">
+      <h2>Contact Form</h2>
+     <form id="serviceForm">
+    <input type="text" id="S.No" placeholder="S.No" required />
+    <input type="text" id="Society NAME" placeholder="Society Name" required />
+    <input type="text" id="Location" placeholder="Location" required />
+    <input type="text" id="Contact Number" placeholder="Contact Number" required />
+    <select id="AMC" required>
+      <option value="">-- AMC --</option>
+      <option value="Available">Active</option>
+      <option value="Unavailable">Non-Active</option>
+    </select>
+    <button type="submit" class="btn submit-btn">Add Service</button>
+    <button type="button" class="btn close-btn" id="closeFormBtn">Close</button>
+  </form>
+    </div>
+  </div>
+   <table class="client-table">
+
   
    
     <thead>
@@ -121,12 +160,15 @@
          style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
   <span style="display: block; text-align: center;">S.No</span>
 </th>
-            <th>Society Name</th>
-            <th>Location</th>
-            <th>Number of Flats</th>
-            <th>President Name</th>
-            <th>Contact Number</th>
-            <th>AMC </th>
+          <th>Society Name</th>
+<th>Location</th>
+<th>Number of Flats</th>
+<th>President Name</th>
+<th>Contact Number</th>
+<th>Security Service</th> 
+<th>AMC</th>
+
+
         </tr>
     </thead>
     <tbody>
@@ -138,12 +180,20 @@
 </td>
 
 
-            <td>Green Valley Residency</td>
+       <td>
+  <a href="#"
+     onclick="openSocietyModal( 'Sunny Heights', 'Mumbai', '120', 'Rajest Sharma', '9876543210', 'Yes', 'Active')"
+     data-address="7th Mile, Sunny Heights, Pune"
+     data-company="Sunny Heights Developers">
+     Sunny Heights
+  </a>
+</td>
             <td>Mumbai</td>
             <td>120</td>
             <td>Rajesh Sharma</td>
             <td>9876543210</td>
-             <td> <select class="Active-dropdown">
+             <td>Yes</td>
+             <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -155,12 +205,19 @@
          style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
   <span style="display: block; text-align: center;">01</span>
 </td>
-            <td>Sunny Heights</td>
+   <td>
+  <a href="#"
+     onclick="openSocietyModal( 'Lake View Apartments', 'Pune', '150', 'Manoj Patel', '9988776655', 'Yes', 'Active')">
+    Lake View Apartments
+  </a>
+</td>
+
             <td>Pune</td>
             <td>80</td>
             <td>Priya Mehta</td>
             <td>9123456789</td>
-             <td> <select class="Active-dropdown">
+             <td>Yes</td>
+             <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -172,12 +229,19 @@
          style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
   <span style="display: block; text-align: center;">01</span>
 </td>
-            <td>Lake View Apartments</td>
+     <td>
+  <a href="#"
+     onclick="openSocietyModal('Ocean Breeze Apartments', 'Chennai', '200', 'Karthik Reddy', '9090909090', 'Yes', 'Active')">
+    Silver Oaks Residences
+  </a>
+</td>
+
             <td>Bangalore</td>
             <td>150</td>
             <td>Manoj Patel</td>
             <td>9988776655</td>
-              <td> <select class="Active-dropdown">
+             <td>Yes</td>
+              <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -189,12 +253,17 @@
          style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
   <span style="display: block; text-align: center;">01</span>
 </td>
-            <td>Silver Oaks Residency</td>
-            <td>Hyderabad</td>
+              <td>
+  <a href="#"
+     onclick="openSocietyModal( 'Royal Greens', 'Jaipur', '130', 'Vikas Singh', '9234567890', 'Yes', 'Yes')">
+    Royal Greens
+  </a>
+</td>     <td>Hyderabad</td>
             <td>100</td>
             <td>Anita Desai</td>
             <td>9112233445</td>
-             <td> <select class="Active-dropdown">
+             <td>Yes</td>
+             <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select></td>
@@ -206,12 +275,19 @@
   <span style="display: block; text-align: center;">01</span>
 </td>
 
-            <td>Hilltop Towers</td>
+ 
+<td>
+  <a href="#"
+     onclick="openSocietyModal( 'Ocean Breeze Apartments', 'Kolkata', '75', 'Rina Mukherjee', '9321567890', 'Yes', 'Yes')">
+    Ocean Breeze Apartments
+  </a>
+</td>
             <td>Chennai</td>
             <td>200</td>
             <td>Karthik Reddy</td>
             <td>9090909090</td>
-            <td> <select class="Active-dropdown">
+             <td>Yes</td>
+            <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -223,12 +299,18 @@
          style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
   <span style="display: block; text-align: center;">01</span>
 </td>
-            <td>Maple Residency</td>
+             <td>
+  <a href="#"
+     onclick="openSocietyModal( 'Ocean Breeze Apartments', 'Delhi', '90', 'Sunita Kapoor', '9345678901', 'Yes', 'Non-Active')">
+    Ocean Breeze Apartments
+  </a>
+</td>
             <td>Delhi</td>
             <td>90</td>
             <td>Sunita Kapoor</td>
             <td>9345678901</td>
-             <td> <select class="Active-dropdown">
+             <td>Yes</td>
+             <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -241,13 +323,19 @@
   <span style="display: block; text-align: center;">01</span>
 </td>
 
-            <td>Royal Greens</td>
+                <td>
+  <a href="#"
+     onclick="openSocietyModal( 'Royal green', 'Jaipur', '130', 'Vikas Singh', '9345678901', 'Yes', 'Non-Active')">
+   Royal
+  </a>
+</td>
             <td>Jaipur</td>
             <td>130</td>
             <td>Vikas Singh</td>
             <td>9234567890</td>
+             <td>Yes</td>
            
-              <td> <select class="Active-dropdown">
+              <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -259,12 +347,20 @@
          style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
   <span style="display: block; text-align: center;">01</span>
 </td>
-            <td>Ocean Breeze Apartments</td>
+            
+        
+                <td>
+  <a href="#"
+     onclick="openSocietyModal('Royal green', 'Kolkata', '75', 'Rina Mukherjee', '9321567890', 'Yes', 'Non-Active')">
+   New brize
+  </a>
+</td>
             <td>Kolkata</td>
             <td>75</td>
             <td>Rina Mukherjee</td>
             <td>9321567890</td>
-            <td> <select class="Active-dropdown">
+             <td>Yes</td>
+            <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -276,12 +372,21 @@
          style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
   <span style="display: block; text-align: center;">01</span>
 </td>
-            <td>Sunshine Residency</td>
+           
+      
+
+                <td>
+  <a href="#"
+     onclick="openSocietyModal('Sunshine Residency', 'Ahmedabad', '110', 'Arjun Desai', '9876123450', 'Yes', 'Non-Active')">
+   Sunshine Residency
+  </a>
+</td>
             <td>Ahmedabad</td>
             <td>110</td>
             <td>Arjun Desai</td>
             <td>9876123450</td>
-              <td> <select class="Active-dropdown">
+             <td>Yes</td>
+              <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -292,12 +397,21 @@
          style="position: absolute; left: 5px; top: 50%; transform: translateY(-50%);" />
   <span style="display: block; text-align: center;">01</span>
 </td>
-            <td>Pearl Heights</td>
+       
+       <td>
+  <a href="#"
+     onclick="openSocietyModal( 'Pearl Heights', 'Lucknow', '95', 'Sneha Verma', '	9988123456', 'Yes', 'Non-Active')">
+Pearl Heights
+  </a>
+</td>
             <td>Lucknow</td>
+                      
+ 
             <td>95</td>
             <td>Sneha Verma</td>
             <td>9988123456</td>
-          <td> <select class="Active-dropdown">
+             <td>Yes</td>
+          <td> <select class="status-dropdown">
           <option value="Active" selected>Active</option>
           <option value="Non-Active">Non-Active</option>
         </select>
@@ -305,6 +419,39 @@
         </tr>
     </tbody>
 </table>
+<div id="societytModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeSocietyModal()">&times;</span>
+    <h2>Society Details Form</h2>
+    <form id="societyForm">
+
+      <label for="societyName">Society Name:</label>
+      <input type="text" id="societyName" name="societyName" required>
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required>
+
+      <label for="numberOfFlats">Number of Flats:</label>
+      <input type="number" id="numberOfFlats" name="numberOfFlats" required>
+
+      <label for="presidentName">President Name:</label>
+      <input type="text" id="presidentName" name="presidentName" required>
+
+      <label for="contactNumber">Contact Number:</label>
+      <input type="tel" id="contactNumber" name="contactNumber" required>
+
+      <label for="securityService">Security Service:</label>
+      <input type="text" id="securityService" name="securityService" required>
+
+      <label for="amc">AMC:</label>
+      <input type="text" id="amc" name="amc" required>
+
+      <button type="submit">Submit</button>
+      <button type="button" class="cancel" onclick="closeSocietyModal()">Cancel</button>
+    </form>
+  </div>
+</div>
+
 
   <script src="script.js"></script>
 </body>

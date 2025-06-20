@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setupDropdown('userManagementToggle', 'userDropdown');
   setupDropdown('ServiceToggle', 'serviceDropdown');
   setupDropdown('clientToggle', 'clientDropdown');
+  setupDropdown('hmsToggle', 'hmsDropdown');
 
   // Chart: Audience Line Chart
   const audienceCanvas = document.getElementById("audienceChart");
@@ -261,3 +262,44 @@ function closeModal() {
       }
     });
   });
+  function openClientModal(name, code, email, phone, address, companyName) {
+  document.getElementById('clientModal').style.display = 'block';
+
+  document.getElementById('clientName').value = name;
+  document.getElementById('clientCode').value = code;
+  document.getElementById('clientEmail').value = email;
+  document.getElementById('clientPhone').value = phone;
+  document.getElementById('clientAddress').value = address;
+  document.getElementById('clientCompany').value = companyName; // Very important: Company name set here
+}
+
+function closeClientModal() {
+  document.getElementById('clientModal').style.display = 'none';
+}
+
+
+  function openSocietyModal(name, location, flats, president, contact, service, amc) {
+  document.getElementById('societytModal').style.display = 'block';
+
+  document.getElementById('societyName').value = name;
+  document.getElementById('location').value = location;
+
+  document.getElementById('numberOfFlats').value = flats;
+  document.getElementById('presidentName').value = president;
+  document.getElementById('contactNumber').value = contact;
+  document.getElementById('securityService').value = service; // Very important: Company name set here
+  document.getElementById('amc').value = amc; // Very important: Company name set here
+}
+
+function closeSocietyModal() {
+  document.getElementById('societytModal').style.display = 'none';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const hmsToggle = document.getElementById('hmsToggle'); // This is the clickable anchor
+  const hmsDropdown = document.getElementById('hmsDropdown'); // This is your ul hidden list
+
+  hmsToggle.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent page jump
+    hmsDropdown.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide the list
+  });
+});

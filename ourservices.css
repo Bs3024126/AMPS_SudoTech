@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Layout */
+body {
+  display: flex;
+  background: #f7f9fc;
+  color: #2c2c2c;
+
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #fff;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  margin-top: -20px;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+
+.sidebar.active {
+  left: -200px;
+
+}
+
+.logo-md {
+  display: block;
+  margin: 0 auto 30px auto;
+  max-width: 100px;
+  height: 90px;
+  margin-bottom: -10px;
+}
+
+.sidebar ul {
+  list-style: none;
+
+}
+
+.sidebar li {
+
+  margin-bottom: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.2s;
+
+}
+
+
+/* .sidebar li:hover,
+.sidebar li.active {
+  color: #1aaa55;
+  margin-top:-10px;
+
+} */
+
+.active a {
+  font-weight: b;
+  /* text-decoration: none; */
+  /* color: #1aaa55; */
+
+
+}
+
+/* Main Content */
+.main {
+  margin-left: 200px;
+  flex: 1;
+  /* padding: 6px; */
+  transition: margin-left 0.3s ease;
+  padding: 30px;
+}
+
+.main.shifted {
+  margin-left: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fdfdfd;
+  margin-top: 5px;
+  gap: 5px;
+  border-radius: 20px;
+  margin-left: -10px;
+  margin-right: -20px;
+  /* box-shadow: 0 4px 2px -2px gray; */
+}
+
+header i {
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  margin-left: 11px;
+}
+
+ header h1 {
+  font-size: 20px; /* or 24px if you want it a bit larger */
+  font-weight: 700;
+  margin: 0; 
+  margin-left: -40px;
+  color: #2d3748;
+  text-align: center;
+  position: relative;
+}
+
+header h2 {
+  position: absolute;
+  left: 55%;
+  font-size: 25px;
+  color: #15803d;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin: 0; /* Optional: remove default margin */
+}
+
+header input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  min-width: 200px;
+  margin-left: 700px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url('https://randomuser.me/api/portraits/men/32.jpg') center/cover;
+  margin-left: -40px;
+  margin-right: 20px;
+}
+
+.company-info {
+  background-color: #f5f5f5;
+  margin-top: -20px;
+  padding: 1px 20px;
+  display: flex;
+  margin-left: -30px;
+  margin-right: -40px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  position: relative;
+}
+
+.company-info .left {
+  font-weight: bold;
+  color: #333;
+  font-size: 11px;
+}
+
+.company-info .right {
+  color: #555;
+  font-size: 11px;
+}
+
+/* Container for all services */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  /* Ya space-between/space-evenly if needed */
+  width: 100%;
+  max-width: 1800px;
+  /* adjust if needed */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 
+Individual service card */
+.service-card {
+  flex: 1 1 calc(20% - 30px);
+  height: 350px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(34, 139, 34, 0.1);
+  overflow: hidden;
+  position: relative;
+  width: 90px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #c0ebc0;
+
+
+}
+
+a .service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(34, 139, 34, 0.2);
+}
+
+/* Top image */
+.service-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Icon section */
+.icon-box {
+  background-color: #4CAF50;
+  width: 50px;
+  height: 50px;
+  margin: -25px 20px 10px;
+  border-radius: 8px;
+  position: absolute;
+  /* ✅ absolute position inside card */
+  top: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.icon-box img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  /* Make icons white */
+}
+
+/* Text content */
+.service-content {
+  padding: 0 20px 20px;
+  margin-left: 20px;
+}
+
+.service-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin: 10px 0 5px;
+}
+
+.service-description {
+  font-size: 14px;
+  color: #4d4d4d;
+  line-height: 1.5;
+}
+
+/* .service-card {
+  flex: 1 1 calc(25% - 20px); 
+   max-width: calc(25% - 20px);
+  min-width: 350px;
+  box-sizing: border-box;
+}  */
+
+@media (max-width: 1200px) {
+  .service-card {
+    flex: 1 1 calc(33.333% - 20px);
+    width: auto;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .service-card {
+    flex: 1 1 calc(50% - 20px);
+    width: auto;
+  }
+}
+
+/* Small tablets and phones */
+@media (max-width: 600px) {
+  .service-card {
+    flex: 1 1 100%;
+    width: auto;
+  }
+
+  .icon-box {
+    top: 140px;
+    /* adjust if needed */
+    margin-left: 15px;
+  }
+
+  .service-title {
+    font-size: 18px;
+  }
+
+  .service-description {
+    font-size: 13px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .service-title {
+    font-size: 16px;
+  }
+
+  .service-description {
+    font-size: 12px;
+  }
+
+  .icon-box {
+    width: 40px;
+    height: 40px;
+    top: 130px;
+  }
+
+  .icon-box img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+:root {
+  --green-dark: #1b5e20;
+  --green-medium: #388e3c;
+  --green-light: #a5d6a7;
+  --white: #ffffff;
+  --bg: #e8f5e9;
+}

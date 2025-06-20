@@ -125,126 +125,125 @@
       <input type="text" placeholder="Search here...">
       <div class="profile-pic"></div>
     </header> 
-  <div class="table-container1">
-     <h1>New Services</h1>
-      <input type="text" id="searchBox" placeholder="Search services..." />
-       <a href="#" class="btn-add-service" id="openFormBtn"style="color:white;background-color:Green">➕ Add New Service</a>
+<div class="table-container1">
+     <h1>New Employee</h1>
+      <input type="text" id="searchBox" placeholder="Search employess..." />
+      <a href="#" class="btn-add-service" id="openFormBtn" style="background-color: green; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block;">➕ Add New Employees</a>
     </div>
-   
-<div class="overlay" id="overlay">
+  <div class="overlay" id="overlay">
     <div class="form-popup">
       <h2>Contact Form</h2>
      <form id="serviceForm">
-    <input type="text" id="serviceCode" placeholder="Service Code" required />
-    <input type="text" id="serviceName" placeholder="Service Name" required />
-    <input type="text" id="servicePrice" placeholder="Price (e.g., ₹500)" required />
-    <input type="text" id="serviceDuration" placeholder="Duration (e.g., 1 Hour)" required />
-    <select id="serviceAvailability" required>
+    <input type="text" id="serviceCode" placeholder="Employee Code" required />
+    <input type="text" id="serviceName" placeholder="EmployeeName" required />
+    <input type="text" id="servicePrice" placeholder="Department" required />
+    <input type="text" id="serviceDuration" placeholder="Joimg date" required />
+    <!-- <select id="serviceAvailability" required>
       <option value="">-- Availability --</option>
       <option value="Available">Available</option>
       <option value="Unavailable">Unavailable</option>
-    </select>
-    <button type="submit" class="btn submit-btn">Add Service</button>
+    </select> -->
+    <button type="submit" class="btn submit-btn">Add Employee</button>
     <button type="button" class="btn close-btn" id="closeFormBtn">Close</button>
   </form>
     </div>
   </div>
-    
-
-  <div class="table-wrapper">
-    <table border="1" cellpadding="10" cellspacing="0" id="servicesTable">
+     
+     
+    <table class="client-table">
       <thead>
         <tr>
-          <th>Service Code</th>
-          <th>Service Name</th>
-          <th>Price</th>
-          <th>Duration</th>
-          <th>Availability</th>
+          <th>Employee Code</th>
+          <th>Employee Name</th>
+          <th>Department</th>
+          <th>Designation</th>
+          <th>Joining Date</th>
+          <th>Location</th>
         </tr>
       </thead>
-      <tbody id="serviceTableBody">
+      <tbody>
         <tr>
-          <td>001</td>
-          <td>AC Installation</td>
-          <td>₹1500</td>
-          <td>2 Hours</td>
-          <td>Available</td>
+          <td>EMP001</td>
+          <td>Amit Sharma</td>
+          <td>IT</td>
+          <td>Software Engineer</td>
+          <td>2020-01-15</td>
+          <td>Mumbai</td>
         </tr>
         <tr>
-          <td>002</td>
-          <td>Fan Repair</td>
-          <td>₹500</td>
-          <td>1 Hour</td>
-          <td>Unavailable</td>
+          <td>EMP002</td>
+          <td>Priya Verma</td>
+          <td>HR</td>
+          <td>HR Manager</td>
+          <td>2019-07-20</td>
+          <td>Delhi</td>
         </tr>
         <tr>
-          <td>003</td>
-          <td>Switchboard Repair</td>
-          <td>₹700</td>
-          <td>1.5 Hours</td>
-          <td>Available</td>
+          <td>EMP003</td>
+          <td>Rohan Gupta</td>
+          <td>Finance</td>
+          <td>Accountant</td>
+          <td>2021-03-11</td>
+          <td>Pune</td>
         </tr>
-        <td>004</td>
-  <td>Ceiling Fan Installation</td>
-  <td>₹600</td>
-  <td>1 Hour</td>
-  <td>Available</td>
-</tr>
-<tr>
-  <td>005</td>
-  <td>Light Fitting Installation</td>
-  <td>₹400</td>
-  <td>45 Minutes</td>
-  <td>Available</td>
-</tr>
-<tr>
-  <td>006</td>
-  <td>Inverter Setup</td>
-  <td>₹1800</td>
-  <td>3 Hours</td>
-  <td>Unavailable</td>
-</tr>
-<tr>
-  <td>007</td>
-  <td>Electrical Wiring (per room)</td>
-  <td>₹1200</td>
-  <td>4 Hours</td>
-  <td>Available</td>
-</tr>
-<tr>
-  <td>008</td>
-  <td>MCB Replacement</td>
-  <td>₹350</td>
-  <td>30 Minutes</td>
-  <td>Available</td>
-</tr>
-<tr>
-  <td>009</td>
-  <td>Power Socket Installation</td>
-  <td>₹250</td>
-  <td>30 Minutes</td>
-  <td>Available</td>
-</tr>
-<tr>
-  <td>010</td>
-  <td>Tube Light Repair</td>
-  <td>₹300</td>
-  <td>30 Minutes</td>
-  <td>Unavailable</td>
-</tr>
-<tr>
-  <td>011</td>
-  <td>Door Bell Installation</td>
-  <td>₹200</td>
-  <td>20 Minutes</td>
-  <td>Available</td>
-</tr>
-<tr>
- 
-        <!-- More rows -->
+        <tr>
+          <td>EMP004</td>
+          <td>Neha Singh</td>
+          <td>Marketing</td>
+          <td>Marketing Lead</td>
+          <td>2018-10-05</td>
+          <td>Bangalore</td>
+        </tr>
+        <tr>
+          <td>EMP005</td>
+          <td>Vikas Desai</td>
+          <td>IT</td>
+          <td>System Analyst</td>
+          <td>2022-01-10</td>
+          <td>Chennai</td>
+        </tr>
+        <tr>
+          <td>EMP006</td>
+          <td>Sonali Roy</td>
+          <td>Finance</td>
+          <td>Financial Analyst</td>
+          <td>2020-05-18</td>
+          <td>Kolkata</td>
+        </tr>
+        <tr>
+          <td>EMP007</td>
+          <td>Ajay Kumar</td>
+          <td>Operations</td>
+          <td>Operations Manager</td>
+          <td>2017-09-12</td>
+          <td>Hyderabad</td>
+        </tr>
+        <tr>
+          <td>EMP008</td>
+          <td>Deepika Rathi</td>
+          <td>IT</td>
+          <td>Web Developer</td>
+          <td>2021-06-22</td>
+          <td>Ahmedabad</td>
+        </tr>
+        <tr>
+          <td>EMP009</td>
+          <td>Karan Mehta</td>
+          <td>Support</td>
+          <td>Support Engineer</td>
+          <td>2019-11-30</td>
+          <td>Jaipur</td>
+        </tr>
+        <tr>
+          <td>EMP010</td>
+          <td>Ritu Kapoor</td>
+          <td>Sales</td>
+          <td>Sales Executive</td>
+          <td>2018-04-14</td>
+          <td>Lucknow</td>
+        </tr>
       </tbody>
     </table>
-    </div>
   </div>
 </div>
 

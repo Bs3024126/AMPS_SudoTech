@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Layout */
+body {
+  display: flex;
+  background: #f7f9fc;
+  color: #2c2c2c;
+
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #fff;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  margin-top: -20px;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  text-decoration: none;
+}
+
+
+.sidebar.active {
+  left: -200px;
+
+}
+
+.logo-md {
+  display: block;
+  margin: 0 auto 30px auto;
+  max-width: 100px;
+  height: 90px;
+  margin-bottom: -10px;
+}
+
+.sidebar ul {
+  list-style: none;
+
+}
+
+.sidebar li {
+
+  margin-bottom: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.2s;
+
+}
+
+
+/* .sidebar li:hover,
+.sidebar li.active {
+  color: #1aaa55;
+  margin-top:-10px;
+
+} */
+
+.active a {
+  font-weight: b;
+  /* text-decoration: none; */
+  /* color: #1aaa55; */
+
+
+}
+
+/* Main Content */
+.main {
+  margin-left: 200px;
+  flex: 1;
+  /* padding: 6px; */
+  transition: margin-left 0.3s ease;
+  padding: 30px;
+}
+
+.main.shifted {
+  margin-left: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fdfdfd;
+  margin-top: 5px;
+  gap: 5px;
+  border-radius: 20px;
+  margin-left: -10px;
+  margin-right: -20px;
+  /* box-shadow: 0 4px 2px -2px gray; */
+}
+
+header i {
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  margin-left: 11px;
+}
+
+ header h1 {
+  font-size: 20px; /* or 24px if you want it a bit larger */
+  font-weight: 700;
+  margin: 0; 
+  margin-left: -40px;
+  color: #2d3748;
+  text-align: center;
+  position: relative;
+}
+
+header h2 {
+  position: absolute;
+  left: 55%;
+  font-size: 25px;
+  color: #15803d;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin: 0; /* Optional: remove default margin */
+}
+
+header input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  min-width: 200px;
+  margin-left: 700px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url('https://randomuser.me/api/portraits/men/32.jpg') center/cover;
+  margin-left: -40px;
+  margin-right: 20px;
+}
